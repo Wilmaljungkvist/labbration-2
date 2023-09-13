@@ -1,8 +1,11 @@
-import { randomInt, randomArrayItem } from "./randomGenerator.js"
+import { randomInt, randomDecimal, randomArrayIndex } from "./randomGenerator.js"
 
 const randomInteger = randomInt(1, 10)
 console.log('Slumpat heltal:', randomInteger)
 
+const randomFloat = randomDecimal(1, 10)
+console.log('Slumpat decimaltal:', randomFloat)
+
 const arr = ['Hej', 'Vad', 'Heter', 'du?', 'lol', 'jag', 'heter', 'wilma']
-const randomArray = randomArrayItem(arr)
-console.log('slumpad sträng i array:', randomArray)
+const arrayIndex = randomArrayIndex(arr)
+console.log('slumpad sträng i array:', arr[arrayIndex])
