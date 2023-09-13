@@ -1,8 +1,9 @@
 {
   "name": "labbration-2",
   "version": "1.0.0",
-  "description": "Logger that logs things that go wrong etc..",
+  "description": "Slumpgenerator",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "start": "node src/js/index.js",
     "test": "test"
