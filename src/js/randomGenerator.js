@@ -14,10 +14,25 @@ export function randomArrayIndex (Arr) {
 
 export function randomBoolean () {
     const oneOrTwo = randomInt(1, 2) 
-    
     if (oneOrTwo === 1) {
         return true
     } else {
         return false
     }
 }
+
+export function randomSequence (min, max, length) {
+    const arr = []
+    for (let i = 0; i < length; i++) {
+        arr.push(randomInt(min, max))
+    }
+    for (let i = 0; i < arr.length; i++) {
+        const randomIndex = randomInt(0, arr.length -1)
+        const number = arr[randomIndex]
+        arr[randomIndex] = arr[i]
+        arr[i] = number 
+    }
+    return arr
+}
+
+
