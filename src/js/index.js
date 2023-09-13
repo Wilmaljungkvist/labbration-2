@@ -1,4 +1,4 @@
-import { randomInt, randomDecimal, randomArrayIndex, randomBoolean, randomSequence } from "./randomGenerator.js"
+import { randomInt, randomDecimal, randomArrayIndex, randomBoolean, randomSequenceArray } from "./randomGenerator.js"
 
 const randomInteger = randomInt(1, 10)
 console.log('Slumpat heltal:', randomInteger)
@@ -14,4 +14,4 @@ const randBoolean = randomBoolean()
 
 console.log('true or false?', randBoolean)
 
-console.log(randomSequence(1, 10, 10))
+console.log(randomSequenceArray(1, 10, 10))

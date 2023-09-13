@@ -21,18 +21,21 @@ export function randomBoolean () {
     }
 }
 
-export function randomSequence (min, max, length) {
+export function randomSequenceArray (min, max, length) {
     const arr = []
     for (let i = 0; i < length; i++) {
         arr.push(randomInt(min, max))
     }
+    console.log(arr)
     for (let i = 0; i < arr.length; i++) {
-        const randomIndex = randomInt(0, arr.length -1)
+        const randomIndex = randomArrayIndex(arr)
         const number = arr[randomIndex]
         arr[randomIndex] = arr[i]
         arr[i] = number 
     }
     return arr
 }
+
+
 
 
