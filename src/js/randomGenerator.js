@@ -12,3 +12,12 @@ export function randomArrayIndex (Arr) {
     return randomIndex
 }
 
+export function randomBoolean () {
+    const oneOrTwo = randomInt(1, 2) 
+    
+    if (oneOrTwo === 1) {
+        return true
+    } else {
+        return false
+    }
+}

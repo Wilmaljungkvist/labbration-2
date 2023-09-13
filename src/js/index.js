@@ -1,4 +1,4 @@
-import { randomInt, randomDecimal, randomArrayIndex } from "./randomGenerator.js"
+import { randomInt, randomDecimal, randomArrayIndex, randomBoolean } from "./randomGenerator.js"
 
 const randomInteger = randomInt(1, 10)
 console.log('Slumpat heltal:', randomInteger)
@@ -9,3 +9,7 @@ console.log('Slumpat decimaltal:', randomFloat)
 const arr = ['Hej', 'Vad', 'Heter', 'du?', 'lol', 'jag', 'heter', 'wilma']
 const arrayIndex = randomArrayIndex(arr)
 console.log('slumpad sträng i array:', arr[arrayIndex])
+
+const randBoolean = randomBoolean()
+
+console.log('true or false?', randBoolean)
