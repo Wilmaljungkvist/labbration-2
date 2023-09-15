@@ -2,7 +2,9 @@ import { mathRandomInt, randomInt, randomDecimal, randomArrayIndex, randomBoolea
 
 import { linearCongruentialGenerator } from "./lCGTest.js"
 
-console.log(linearCongruentialGenerator())
+for(let i = 0; i < 10; i++) {
+    console.log(linearCongruentialGenerator())
+}
 
 const randomInteger = randomInt(1, 10)
 console.log('Slumpat heltal:', randomInteger)
