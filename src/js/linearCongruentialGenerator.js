@@ -1,4 +1,22 @@
 export class LinearCongruentialGenerator {
+    constructor (seed, multiplier, increment, modulus) {
+        this.seed = seed
+        this.multiplier = multiplier
+        this.increment = increment
+        this.modulus = modulus
+    }
+
+    nextNumberInSequence () {
+        this.seed = (this.multiplier * this.currentSeed + this.increment) % this.modulus
+        return this.seed / this.modulus 
+    }
+
+    nextNumberRange (min, max) {
+        const randomValue = this.nextNumberInSequence
+        const minMaxValue = min + randomValue * (max - min)
+        return Math.floor(minMaxValue)
+    }
+
     // However, it's important to note that LCGs have limitations and are not suitable for all applications, especially those requiring high-quality or cryptographic randomness. 
     // TODO: Det kan inte vara vilka nummer som helst för då kommer generatorn börja repetera nummer efter ett tag. Uttrycket för denna generator är: Xn+1 = (a * Xn + c) % m. 
     // Xn is the current pseudo-random number (seed).
