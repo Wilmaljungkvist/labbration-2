@@ -1,5 +1,9 @@
 import { mathRandomInt, randomInt, randomDecimal, randomArrayIndex, randomBoolean, randomSequenceArray } from "./randomGenerator.js"
 
+import { linearCongruentialGenerator } from "./lCGTest.js"
+
+console.log(linearCongruentialGenerator())
+
 const randomInteger = randomInt(1, 10)
 console.log('Slumpat heltal:', randomInteger)
 const e = mathRandomInt(1, 10)
