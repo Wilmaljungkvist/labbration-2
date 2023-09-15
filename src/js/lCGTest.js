@@ -5,7 +5,8 @@
     let currentSeed = seed
 
 
-    export function linearCongruentialGenerator () {
-        currentSeed = (multiplier * currentSeed + increment) % modulus;
-        return currentSeed / modulus;
+    export function linearCongruentialGenerator (min, max) {
+        let newMax = max - min
+        currentSeed = (multiplier * currentSeed + increment) % modulus
+        return currentSeed
     }
