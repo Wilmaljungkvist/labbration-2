@@ -1,7 +1,9 @@
-import { randomInt, randomDecimal, randomArrayIndex, randomBoolean, randomSequenceArray } from "./randomGenerator.js"
+import { mathRandomInt, randomInt, randomDecimal, randomArrayIndex, randomBoolean, randomSequenceArray } from "./randomGenerator.js"
 
 const randomInteger = randomInt(1, 10)
 console.log('Slumpat heltal:', randomInteger)
+const e = mathRandomInt(1, 10)
+console.log('Slumpat heltal:', e)
 
 const randomFloat = randomDecimal(1, 10)
 console.log('Slumpat decimaltal:', randomFloat)
