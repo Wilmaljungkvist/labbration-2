@@ -4,8 +4,12 @@ export class LinearCongruentialGenerator {
         this.multiplier = 0
         this.increment = 0
         this.modulus = 0
-        this.generateValidParameters()
+        this.parametersGenerated = false
 
+        if (!this.parametersGenerated) {
+            this.generateValidParameters()
+            this.parametersGenerated = true
+        }
     }
 
     generateValidParameters () {

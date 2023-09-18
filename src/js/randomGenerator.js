@@ -1,6 +1,6 @@
 import { LinearCongruentialGenerator } from './LinearCongruentialGenerator.js'
 
-const lcg = new LinearCongruentialGenerator(12345, 1664525, 1013904223, 73837489)
+const lcg = new LinearCongruentialGenerator()
 
 const sequence = lcg.nextDecimalInSequence()
 const range = lcg.nextIntRange(1, 20)
