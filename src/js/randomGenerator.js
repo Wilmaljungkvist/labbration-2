@@ -2,8 +2,8 @@ import { LinearCongruentialGenerator } from './LinearCongruentialGenerator.js'
 
 const lcg = new LinearCongruentialGenerator(12345, 1664525, 1013904223, 73837489)
 
-const sequence = lcg.nextNumberInSequence()
-const range = lcg.nextNumberRange(1, 20)
+const sequence = lcg.nextDecimalInSequence()
+const range = lcg.nextIntRange(1, 20)
 console.log(sequence + ' this is a sequence')
 console.log(range + ' this is in the range')
 

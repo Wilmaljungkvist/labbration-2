@@ -1,9 +1,18 @@
 export class LinearCongruentialGenerator {
-    constructor (seed, multiplier, increment, modulus) {
-        this.seed = seed
-        this.multiplier = multiplier
-        this.increment = increment
-        this.modulus = modulus
+    constructor () {
+        this.seed = 0
+        this.multiplier = 0
+        this.increment = 0
+        this.modulus = 0
+        this.generateValidParameters()
+
+    }
+
+    generateValidParameters () {
+        this.seed = Math.floor(Math.random() * 10000)
+        this.multiplier = Math.floor(Math.random() * 100000 )
+        this.increment = Math.floor(Math.random() * 1000000 )
+        this.modulus = Math.floor(Math.random() * 10000000 )
     }
 
      nextDecimalInSequence () {
@@ -12,7 +21,7 @@ export class LinearCongruentialGenerator {
     }
 
     nextIntRange (min, max) {
-        const randomValue = this.nextNumberInSequence()
+        const randomValue = this.nextDecimalInSequence()
         const minMaxValue = min + randomValue * (max - min)
         return Math.floor(minMaxValue)
     }
