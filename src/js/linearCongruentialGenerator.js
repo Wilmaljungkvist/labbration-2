@@ -6,13 +6,13 @@ export class LinearCongruentialGenerator {
         this.modulus = modulus
     }
 
-    nextNumberInSequence () {
-        this.seed = (this.multiplier * this.currentSeed + this.increment) % this.modulus
+     nextDecimalInSequence () {
+        this.seed = (this.multiplier * this.seed + this.increment) % this.modulus
         return this.seed / this.modulus 
     }
 
-    nextNumberRange (min, max) {
-        const randomValue = this.nextNumberInSequence
+    nextIntRange (min, max) {
+        const randomValue = this.nextNumberInSequence()
         const minMaxValue = min + randomValue * (max - min)
         return Math.floor(minMaxValue)
     }
