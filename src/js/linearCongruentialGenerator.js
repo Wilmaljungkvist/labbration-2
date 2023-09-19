@@ -14,26 +14,48 @@ export class LinearCongruentialGenerator {
 
     generateValidParameters () {
         do {
-        this.seed = Math.floor(Math.random() * 10000)
-        this.multiplier = Math.floor(Math.random() * 100000 )
-        this.increment = Math.floor(Math.random() * 1000000 )
-        this.modulus = Math.floor(Math.random() * 10000000 )
+        this.seed = Math.floor(Math.random() * 10000) + 1
+        this.multiplier = Math.floor(Math.random() * 100000 ) + 1
+        this.increment = Math.floor(Math.random() * 1000000 ) + 1
+        this.modulus = Math.floor(Math.random() * 10000000 ) + 1
         } while (!this.isValidParameters())
     }
 
     isValidParameters () {
-        if (
-            this.multiplier > 0 &&
-            this.increment > 0 &&
-            this.modulus > 0 &&
-            this.seed > 0
-        ) {
-            console.error('Dom är valid')
-            return true
-        } else {
-            console.error('Invalid parameters for the linear congruential generator.')
+    const modulus = this.modulus
+    const multiplier = this.multiplier
+    const increment = this.increment
+    const seed = this.seed
+
+        if (!this.isPrime(modulus)) {
+            console.log('its false')
+            return false
         }
+
+        if(this.biggestCommonDivisor(modulus, multiplier) !== 1 || this.biggestCommonDivisor(modulus, increment) !== 1) {
+            console.log('it´s false')
+            return false
+        }
+
+        if (modulus % 2 === 0) {
+            if ((multiplier - 1) % 8 !== 0 || (increment % 4) !== 0) {
+                return false
+            }
+        }
+
+        return true
     }
+
+    biggestCommonDivisor (biggerNumber, smallerNumber) {
+        while (smallerNumber !== 0) {
+            const temporary = smallerNumber
+            smallerNumber = biggerNumber % smallerNumber
+            biggerNumber = temporary
+        }
+        return biggerNumber
+    }
+
+
 
     isPrime (number) {
         if (number <= 1) {
