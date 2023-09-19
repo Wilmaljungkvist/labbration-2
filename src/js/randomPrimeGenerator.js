@@ -6,9 +6,13 @@ export class RandomNumberGenerator {
     }
 
     randomPrimeNumber (min, max) {
+        let number
         if (this.#handleMinMax(min, max)) {
-        const randomInteger = this.lcg.nextIntRange(min, max)
-        return Math.floor(randomInteger)
+            do {
+                number = this.lcg.nextIntRange(min, max)
+            } while (!this.#isPrime(number))
+            
+        return Math.floor(number)
     }
 }
 
