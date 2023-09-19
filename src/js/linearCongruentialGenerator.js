@@ -70,14 +70,20 @@ export class LinearCongruentialGenerator {
         return true
     }
 
-     #nextDecimalInSequence () {
+    #nextDecimalInSequence () {
         this.seed = (this.multiplier * this.seed + this.increment) % this.modulus
         return this.seed / this.modulus 
+    }
+
+    nextDecimalRange (min, max) {
+        const randomValue = this.#nextDecimalInSequence()
+        const minMaxValue = min + randomValue * (max - min)
+        return minMaxValue
     }
 
     nextIntRange (min, max) {
         const randomValue = this.#nextDecimalInSequence()
         const minMaxValue = min + randomValue * (max - min)
-        return minMaxValue
+        return Math.floor(minMaxValue)
     }
 }

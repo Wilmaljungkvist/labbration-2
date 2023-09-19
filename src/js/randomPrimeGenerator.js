@@ -12,7 +12,7 @@ export class RandomNumberGenerator {
                 number = this.lcg.nextIntRange(min, max)
             } while (!this.#isPrime(number))
             
-        return Math.floor(number)
+        return number
     }
 }
 

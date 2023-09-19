@@ -8,13 +8,13 @@ export class RandomNumberGenerator {
     randomInt (min, max) {
         if (this.#handleMinMax(min, max)) {
         const randomInteger = this.lcg.nextIntRange(min, max)
-        return Math.floor(randomInteger)
+        return randomInteger
     }
 }
 
     randomDecimal (min, max) {
     if (handleMinMax(min, max)) {
-        const randomDecimal = this.lcg.nextIntRange(min, max)
+        const randomDecimal = this.lcg.nextDecimalRange(min, max)
     return randomDecimal
     }
 }
