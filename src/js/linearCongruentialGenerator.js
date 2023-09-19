@@ -53,8 +53,6 @@ export class LinearCongruentialGenerator {
         return biggerNumber
     }
 
-
-
     #isPrime (number) {
         if (number <= 1) {
             return false
@@ -80,6 +78,6 @@ export class LinearCongruentialGenerator {
     nextIntRange (min, max) {
         const randomValue = this.#nextDecimalInSequence()
         const minMaxValue = min + randomValue * (max - min)
-        return Math.floor(minMaxValue)
+        return minMaxValue
     }
 }

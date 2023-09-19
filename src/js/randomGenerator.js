@@ -1,26 +1,21 @@
 import { LinearCongruentialGenerator } from './LinearCongruentialGenerator.js'
 
 const lcg = new LinearCongruentialGenerator()
-
-const sequence = lcg.nextDecimalInSequence()
-const range = lcg.nextIntRange(1, 20)
-console.log(sequence + ' this is a sequence')
+const range = lcg.nextIntRange(1, 20003)
 console.log(range + ' this is in the range')
 
-export function mathRandomInt (min, max) {
-    // TODO: min måste vara mindre än max.
-    const randomInteger = Math.floor(Math.random() * (max - min + 1)) + min
-    return randomInteger
-    }
+// export function mathRandomInt (min, max) {
+//     if (handleMinMax(min, max)) {
+//     const randomInteger = Math.floor(Math.random() * (max - min + 1)) + min
+//     return randomInteger
+//   }
+// }
 
-export function randomDecimal (min, max) {
-    // TODO: min måste vara mindre än max.
-    return Math.random() * (max - min) + min
-}
-
-export function randomInt (min, max) {
- // TODO: mitt eget matematiska uttryck för att få fram något random. 
-}
+// export function randomDecimal (min, max) {
+//     if (handleMinMax(min, max)) {
+//     return Math.random() * (max - min) + min
+//     }
+// }
     
 export function randomArrayIndex (arr) {
     if (arr.length === 0) {
@@ -43,7 +38,7 @@ export function randomBoolean () {
 }
 
 export function randomSequenceArray (min, max, length) {
-    // TODO: min måste vara mindre än max och längden kan inte vara 0.
+    if (handleMinMax(min, max) && length > 0) {
     const arr = []
     for (let i = 0; i < length; i++) {
         arr.push(mathRandomInt(min, max))
@@ -56,6 +51,7 @@ export function randomSequenceArray (min, max, length) {
         arr[i] = number 
     }
     return arr
+}
 }
 
 export function isPrime (number) {
@@ -74,7 +70,3 @@ export function isPrime (number) {
     }
     return true
 }
-
-
-
-
