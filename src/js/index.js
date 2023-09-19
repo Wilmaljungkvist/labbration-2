@@ -1,4 +1,5 @@
-import { mathRandomInt, randomInt, randomDecimal, randomArrayIndex, randomBoolean, randomSequenceArray } from "./randomGenerator.js"
+import { mathRandomInt, randomInt, randomDecimal, randomArrayIndex, randomBoolean, randomSequenceArray, isPrime } from "./randomGenerator.js"
+
 
 const randomInteger = mathRandomInt(1, 10)
 console.log('Slumpat heltal:', randomInteger)
@@ -17,3 +18,5 @@ const randBoolean = randomBoolean()
 console.log('true or false?', randBoolean)
 
 console.log(randomSequenceArray(1, 10, 10))
+
+console.log(isPrime(9999863))
