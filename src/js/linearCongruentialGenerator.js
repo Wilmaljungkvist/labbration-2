@@ -13,10 +13,26 @@ export class LinearCongruentialGenerator {
     }
 
     generateValidParameters () {
+        do {
         this.seed = Math.floor(Math.random() * 10000)
         this.multiplier = Math.floor(Math.random() * 100000 )
         this.increment = Math.floor(Math.random() * 1000000 )
         this.modulus = Math.floor(Math.random() * 10000000 )
+        } while (!this.isValidParameters())
+    }
+
+    isValidParameters () {
+        if (
+            this.multiplier > 0 &&
+            this.increment > 0 &&
+            this.modulus > 0 &&
+            this.seed > 0
+        ) {
+            console.error('Dom är valid')
+            return true
+        } else {
+            console.error('Invalid parameters for the linear congruential generator.')
+        }
     }
 
      nextDecimalInSequence () {
