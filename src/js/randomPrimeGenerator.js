@@ -1,6 +1,6 @@
 import { LinearCongruentialGenerator } from './LinearCongruentialGenerator.js'
 
-export class RandomNumberGenerator {
+export class RandomPrimeGenerator {
     constructor () {
         this.lcg = new LinearCongruentialGenerator()
     }
