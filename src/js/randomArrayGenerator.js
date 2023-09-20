@@ -20,13 +20,17 @@ randomSequenceArray (min, max, length) {
     for (let i = 0; i < length; i++) {
         arr.push(this.lcg.nextIntRange(min, max))
     }
+    arr = shuffleArray(arr)
+    return arr
+   }
+}
+
+shuffleArray (arr) {
     for (let i = 0; i < arr.length; i++) {
         const randomIndex = this.randomArrayIndex(arr)
         const number = arr[randomIndex]
         arr[randomIndex] = arr[i]
         arr[i] = number 
     }
-    return arr
-   }
-}
+  }
 }
