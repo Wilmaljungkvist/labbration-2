@@ -36,10 +36,24 @@ describe('RandomArrayGenerator', () => {
         }).toThrow('Minimum must be the same or smaller than maximum.')
       })
 
+
       test('randomArrayIndex should throw an error if the array is empty', () => {
         const arr = []
         expect(() => {
           randomArrayGenerator.randomArrayIndex(arr)
         }).toThrow('Array can not be empty.')
+      })
+
+      test('randomArrayIndex should throw an error if the array is not an array', () => {
+        const arrNumber = 3
+        const arrObject = {}
+        const arrBoolean = true
+        const arrString = ''
+        expect(() => {
+          randomArrayGenerator.randomArrayIndex(arrNumber) &&
+          randomArrayGenerator.randomArrayIndex(arrObject) &&
+          randomArrayGenerator.randomArrayIndex(arrBoolean) &&
+          randomArrayGenerator.randomArrayIndex(arrString)
+        }).toThrow('Must be an array.')
       })
   })
