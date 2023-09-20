@@ -1,4 +1,5 @@
 import { LinearCongruentialGenerator } from './LinearCongruentialGenerator.js'
+import { handleMinMax } from './errorHandling'
 
 export class RandomPrimeGenerator {
     constructor () {
@@ -7,7 +8,7 @@ export class RandomPrimeGenerator {
 
     randomPrimeNumber (min, max) {
         let number
-        if (this.#handleMinMax(min, max)) {
+        if (handleMinMax(min, max)) {
             do {
                 number = this.lcg.nextIntRange(min, max)
             } while (!this.#isPrime(number))
@@ -32,11 +33,4 @@ export class RandomPrimeGenerator {
     }
     return true
 }
-
-    #handleMinMax (min, max) {
-        if (max < min) {
-            throw new Error('Minimum must be the same or smaller than maximum.')
-        }
-        return true
-    }
 }
