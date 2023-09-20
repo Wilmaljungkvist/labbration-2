@@ -14,4 +14,17 @@ describe('RandomArrayGenerator', () => {
       expect(randomIndex).toBeGreaterThanOrEqual(0)
       expect(randomIndex).toBeLessThan(arr.length)
     })
+
+    test('randomSequenceArray should generate an array of random numbers within the specified range', () => {
+        const min = 1
+        const max = 10
+        const length = 5
+        const arr = randomArrayGenerator.randomSequenceArray(min, max, length)
+        expect(arr).toHaveLength(length)
+        for (const num of arr) {
+          expect(num).toBeGreaterThanOrEqual(min)
+          expect(num).toBeLessThanOrEqual(max)
+        }
+      })
+  
   })
