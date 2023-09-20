@@ -26,5 +26,13 @@ describe('RandomArrayGenerator', () => {
           expect(num).toBeLessThanOrEqual(max)
         }
       })
-  
+
+      test('randomSequenceArray should throw an error if max is smaller than min', () => {
+        const min = 10
+        const max = 1
+        const length = 5
+        expect(() => {
+          randomArrayGenerator.randomSequenceArray(min, max, length)
+        }).toThrow('Minimum must be the same or smaller than maximum.')
+      })
   })
