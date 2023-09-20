@@ -19,4 +19,12 @@ describe('RandomPrimeGenerator', () => {
         max += i
       }
     })
+
+    test('randomPrimeNumber should throw an error if max is smaller than min', () => {
+        const min = 10
+        const max = 1
+        expect(() => {
+          randomPrimeGenerator.randomPrimeNumber(min, max)
+        }).toThrow('Minimum must be the same or smaller than maximum.')
+      })
   })
