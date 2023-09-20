@@ -76,14 +76,25 @@ export class LinearCongruentialGenerator {
     }
 
     nextDecimalRange (min, max) {
+        if (this.#handleMinMax(min, max)) {
         const randomValue = this.#nextDecimalInSequence()
         const minMaxValue = min + randomValue * (max - min)
         return minMaxValue
+        }
     }
 
     nextIntRange (min, max) {
+        if (this.#handleMinMax(min, max)) {
         const randomValue = this.#nextDecimalInSequence()
         const minMaxValue = min + randomValue * (max - min)
         return Math.floor(minMaxValue)
+        }
+    }
+
+    #handleMinMax (min, max) {
+        if (max < min) {
+            throw new Error('Minimum must be the same or smaller than maximum.')
+        }
+        return true
     }
 }

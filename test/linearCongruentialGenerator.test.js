@@ -24,4 +24,20 @@ describe('LinearCongruentialGenerator', () => {
         expect(randomValue).toBeLessThanOrEqual(max)
         expect(Number.isInteger(randomValue)).toBe(true)
     })
+
+    test('nextIntRange should throw an error if max is smaller than min', () => {
+        const min = 10
+        const max = 1
+        expect(() => {
+          lcg.nextIntRange(min, max)
+        }).toThrow('Minimum must be the same or smaller than maximum.')
+      })
+
+      test('randomIntDecimal should throw an error if max is smaller than min', () => {
+        const min = 10
+        const max = 1
+        expect(() => {
+          lcg.nextDecimalRange(min, max)
+        }).toThrow('Minimum must be the same or smaller than maximum.')
+      })
   })
