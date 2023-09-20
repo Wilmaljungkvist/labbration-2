@@ -13,7 +13,7 @@ export class RandomNumberGenerator {
 }
 
     randomDecimal (min, max) {
-    if (handleMinMax(min, max)) {
+    if (this.#handleMinMax(min, max)) {
         const randomDecimal = this.lcg.nextDecimalRange(min, max)
     return randomDecimal
     }

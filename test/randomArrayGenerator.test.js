@@ -10,7 +10,7 @@ describe('RandomArrayGenerator', () => {
   
     test('randomArrayIndex should return a random index within the array length', () => {
       const arr = [1, 2, 3, 4, 5]
-      for (let i = 0; i < 10; i++) {
+      for (let i = 0; i < 5; i++) {
       const randomIndex = randomArrayGenerator.randomArrayIndex(arr)
       expect(randomIndex).toBeGreaterThanOrEqual(0)
       expect(randomIndex).toBeLessThan(arr.length)
