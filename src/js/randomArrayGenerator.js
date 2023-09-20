@@ -6,7 +6,7 @@ export class RandomArrayGenerator {
     }
 
 randomArrayIndex (arr) {
-    if (this.#handleArray) {
+    if (this.#handleArray(arr)) {
     const length = arr.length
     const randomIndex = this.lcg.nextIntRange(0, length - 1)
     return randomIndex
@@ -35,6 +35,7 @@ randomSequenceArray (min, max, length) {
     } else if (!Array.isArray(arr)) {
         throw new Error('Must be an array.')
     }
+
     return true
 }
 
