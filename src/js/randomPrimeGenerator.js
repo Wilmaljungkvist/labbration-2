@@ -35,7 +35,7 @@ export class RandomPrimeGenerator {
 
     #handleMinMax (min, max) {
         if (max < min) {
-            throw new Error('min must be smaller then max')
+            throw new Error('Minimum must be the same or smaller than maximum.')
         }
         return true
     }
