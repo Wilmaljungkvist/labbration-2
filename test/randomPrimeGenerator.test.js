@@ -28,6 +28,14 @@ describe('RandomPrimeGenerator', () => {
         }).toThrow('Minimum must be the same or smaller than maximum.')
     })
 
+    test('randomPrimeNumberSequence should throw an error if max is smaller than min', () => {
+        const min = 10
+        const max = 1
+        expect(() => {
+            randomPrimeGenerator.randomPrimeNumberSequence(min, max)
+        }).toThrow('Minimum must be the same or smaller than maximum.')
+    })
+
     test('should generate a sequence of prime numbers within the given range', () => {
         const min = 10
         const max = 30

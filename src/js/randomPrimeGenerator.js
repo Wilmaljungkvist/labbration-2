@@ -35,7 +35,7 @@ export class RandomPrimeGenerator {
 }
 
 randomPrimeNumberSequence (min, max, length) {
-    if (handleMinMax(min, max)) {
+    if (handleMinMax(min, max) && length > 0 ) {
     const arr = []
 for (let i = 0; i < length; i++) {
     arr.push(this.randomPrimeNumber(min, max))
