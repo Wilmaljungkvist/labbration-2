@@ -30,14 +30,12 @@ randomSequenceArray (min, max, length) {
 
 shuffleArray (arr) {
     const shuffleArray = [...arr]
-    console.log(shuffleArray)
     for (let i = 0; i < shuffleArray.length; i++) {
         const randomIndex = this.randomArrayIndex(shuffleArray)
         const number = shuffleArray[randomIndex]
         shuffleArray[randomIndex] = shuffleArray[i]
         shuffleArray[i] = number 
     }
-    console.log(shuffleArray)
     return shuffleArray
   }
 }
