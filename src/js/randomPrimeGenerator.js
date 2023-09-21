@@ -1,5 +1,5 @@
 import { LinearCongruentialGenerator } from './LinearCongruentialGenerator.js'
-import { handleMinMax } from './errorHandling'
+import { handleMinMax } from './errorHandling.js'
 
 export class RandomPrimeGenerator {
     constructor () {
@@ -33,4 +33,7 @@ export class RandomPrimeGenerator {
     }
     return true
 }
+
+randomPrimeNumberSequence (min, max, length)
+
 }

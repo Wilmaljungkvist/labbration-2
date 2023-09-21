@@ -58,4 +58,27 @@ describe('RandomArrayGenerator', () => {
           randomArrayGenerator.randomArrayIndex(arrString)
         }).toThrow('Must be an array.')
       })
+
+      test('shuffleArray should maintain the length of the array', () => {
+        const array = [1, 2, 3, 4, 5]
+        const shuffledArray = randomArrayGenerator.shuffleArray(array)
+    
+        expect(shuffledArray).toHaveLength(array.length)
+      })
+
+      test('shuffleArray should contain all original elements', () => {
+        const array = [1, 2, 3, 4, 5]
+        const shuffledArray = randomArrayGenerator.shuffleArray(array)
+    
+        array.forEach((element) => {
+          expect(shuffledArray).toContain(element)
+        })
+      })
+    
+      test('shuffleArray should handle empty arrays', () => {
+        const emptyArray = []
+        const shuffledArray = randomArrayGenerator.shuffleArray(emptyArray)
+    
+        expect(shuffledArray).toHaveLength(0)
+      })
   })

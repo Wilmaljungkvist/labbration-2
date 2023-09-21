@@ -1,5 +1,5 @@
 import { LinearCongruentialGenerator } from './LinearCongruentialGenerator.js'
-import { handleMinMax, handleArray } from './errorHandling'
+import { handleMinMax, handleArray } from './errorHandling.js'
 
 export class RandomArrayGenerator {
     constructor () {
@@ -12,7 +12,7 @@ randomArrayIndex (arr) {
     const randomIndex = this.lcg.nextIntRange(0, length - 1)
     return randomIndex
     } 
-}
+  }
 
 randomSequenceArray (min, max, length) {
     if (handleMinMax(min, max) && length > 0) {
@@ -20,17 +20,21 @@ randomSequenceArray (min, max, length) {
     for (let i = 0; i < length; i++) {
         arr.push(this.lcg.nextIntRange(min, max))
     }
-    arr = shuffleArray(arr)
-    return arr
+    const shuffledArray = this.shuffleArray(arr)
+    return shuffledArray
    }
 }
 
 shuffleArray (arr) {
-    for (let i = 0; i < arr.length; i++) {
-        const randomIndex = this.randomArrayIndex(arr)
-        const number = arr[randomIndex]
-        arr[randomIndex] = arr[i]
-        arr[i] = number 
+    const shuffleArray = [...arr]
+    console.log(shuffleArray)
+    for (let i = 0; i < shuffleArray.length; i++) {
+        const randomIndex = this.randomArrayIndex(shuffleArray)
+        const number = shuffleArray[randomIndex]
+        shuffleArray[randomIndex] = shuffleArray[i]
+        shuffleArray[i] = number 
     }
+    console.log(shuffleArray)
+    return shuffleArray
   }
 }

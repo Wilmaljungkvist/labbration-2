@@ -1,4 +1,4 @@
-import { handleMinMax } from './errorHandling'
+import { handleMinMax } from './errorHandling.js'
 
 export class LinearCongruentialGenerator {
     constructor () {
