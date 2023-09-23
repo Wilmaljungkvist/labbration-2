@@ -29,14 +29,14 @@ randomSequenceArray (min, max, length) {
    }
 }
 
-shuffleArray (arr) {
-    const shuffleArray = [...arr]
-    for (let i = 0; i < shuffleArray.length; i++) {
-        const randomIndex = this.randomArrayIndex(shuffleArray)
-        const number = shuffleArray[randomIndex]
-        shuffleArray[randomIndex] = shuffleArray[i]
-        shuffleArray[i] = number 
+shuffleArray(arr) {
+    const shuffledArray = [...arr]
+    for (let i = shuffledArray.length - 1; i > 0; i--) {
+        const randomIndex = this.lcg.nextIntRange(0, i)
+        const temp = shuffledArray[i]
+        shuffledArray[i] = shuffledArray[randomIndex]
+        shuffledArray[randomIndex] = temp
     }
-    return shuffleArray
-  }
+    return shuffledArray
+}
 }

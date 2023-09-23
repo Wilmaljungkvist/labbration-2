@@ -7,10 +7,12 @@ export class ErrorHandling {
     }
     
          handleArray (arr) {
-        if(arr.length === 0) {
+        if(arr.length <= 0) {
             throw new Error('Array can not be empty.')
         } else if (!Array.isArray(arr)) {
             throw new Error('Must be an array.')
+        } else {
+            return true
         }
          }
 }
