@@ -1,7 +1,8 @@
-import { handleMinMax } from './errorHandling.js'
+import { ErrorHandling } from './errorHandling.js'
 
 export class LinearCongruentialGenerator {
     constructor () {
+        this.error = new ErrorHandling()
         this.seed = 0
         this.multiplier = 0
         this.increment = 0
@@ -78,7 +79,7 @@ export class LinearCongruentialGenerator {
     }
 
     nextDecimalRange (min, max) {
-        if (handleMinMax(min, max)) {
+        if (this.error.handleMinMax(min, max)) {
         const randomValue = this.#nextDecimalInSequence()
         const minMaxValue = min + randomValue * (max - min)
         return minMaxValue
@@ -86,7 +87,7 @@ export class LinearCongruentialGenerator {
     }
 
     nextIntRange (min, max) {
-        if (handleMinMax(min, max)) {
+        if (this.error.handleMinMax(min, max)) {
         const randomValue = this.#nextDecimalInSequence()
         const minMaxValue = min + randomValue * (max - min)
         return Math.floor(minMaxValue)

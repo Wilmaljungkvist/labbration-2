@@ -28,6 +28,11 @@ describe('RandomNumberGenerator', () => {
         }).toThrow('Minimum must be the same or smaller than maximum.')
       })
 
+      test('should return a random Boolean, true or false', () => {
+        const result = randomNumberGenerator.randomBoolean()
+        expect(result).toEqual(expect.any(Boolean))
+    })
+
       test('randomDecimal should return a random decimal within the range', () => {
         let min = 10
         let max = 20

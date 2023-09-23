@@ -1,14 +1,15 @@
 import { LinearCongruentialGenerator } from './LinearCongruentialGenerator.js'
-import { handleMinMax } from './errorHandling.js'
+import { ErrorHandling } from './errorHandling.js'
 
 export class RandomPrimeGenerator {
     constructor () {
         this.lcg = new LinearCongruentialGenerator()
+        this.error = new ErrorHandling()
     }
 
     randomPrimeNumber (min, max) {
         let number
-        if (handleMinMax(min, max)) {
+        if (this.error.handleMinMax(min, max)) {
             do {
                 number = this.lcg.nextIntRange(min, max)
             } while (!this.#isPrime(number))
@@ -35,7 +36,7 @@ export class RandomPrimeGenerator {
 }
 
 randomPrimeNumberSequence (min, max, length) {
-    if (handleMinMax(min, max) && length > 0 ) {
+    if (this.error.handleMinMax(min, max) && length > 0 ) {
     const arr = []
 for (let i = 0; i < length; i++) {
     arr.push(this.randomPrimeNumber(min, max))
