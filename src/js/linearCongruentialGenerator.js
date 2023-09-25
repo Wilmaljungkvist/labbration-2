@@ -1,18 +1,24 @@
 import { ErrorHandling } from './errorHandling.js'
 
 /**
- *
+ * This class represents a Random Number Generator using a linear congruential method.
  */
 export class LinearCongruentialGenerator {
   /**
+   * The constructor creates a new instance of the ErrorHandling class.
+   * This constructor also initializes the generator with default values for its properties and generates valid parameters for the linear congruential method.
    *
+   * @param {number} seed - The seed for the linear congruential generator.
+   * @param {number} multiplier - The multiplier for the linear congruential generator.
+   * @param {number} increment - The increment for the linear congruential generator.
+   * @param {number} modulus - The modulus for the linear congruential generator.
    */
-  constructor () {
+  constructor (seed = 0, multiplier = 0, increment = 0, modulus = 0) {
     this.error = new ErrorHandling()
-    this.seed = 0
-    this.multiplier = 0
-    this.increment = 0
-    this.modulus = 0
+    this.seed = seed
+    this.multiplier = multiplier
+    this.increment = increment
+    this.modulus = modulus
     this.parametersGenerated = false
 
     if (!this.parametersGenerated) {
@@ -22,7 +28,7 @@ export class LinearCongruentialGenerator {
   }
 
   /**
-   *
+   * Generates valid parameters for the LCG.
    */
   #generateValidParameters () {
     do {
@@ -34,13 +40,14 @@ export class LinearCongruentialGenerator {
   }
 
   /**
+   * Checks if the current parameters are valid.
    *
+   * @returns {boolean} - returns true if the parameters are valid or false if not valid.
    */
   #isValidParameters () {
     const modulus = this.modulus
     const multiplier = this.multiplier
     const increment = this.increment
-    const seed = this.seed
 
     if (!this.#isPrime(modulus)) {
       return false
@@ -60,9 +67,11 @@ export class LinearCongruentialGenerator {
   }
 
   /**
+   * Looks for the common divisor in to numbers.
    *
-   * @param biggerNumber
-   * @param smallerNumber
+   * @param {number} biggerNumber - The bigger number.
+   * @param {number} smallerNumber - The smaller number.
+   * @returns {number} - The common divisor between the two numbers.
    */
   #biggestCommonDivisor (biggerNumber, smallerNumber) {
     while (smallerNumber !== 0) {
@@ -74,8 +83,10 @@ export class LinearCongruentialGenerator {
   }
 
   /**
+   * Checks if the number is a prime number.
    *
-   * @param number
+   * @param {number} number - The number that is going to be checked if prime or not.
+   * @returns {boolean} - Returns true if the number is prime and false if not prime.
    */
   #isPrime (number) {
     if (number <= 1) {
@@ -95,7 +106,9 @@ export class LinearCongruentialGenerator {
   }
 
   /**
+   * The next decimal in the sequence, a number between 0 and 1.
    *
+   * @returns {number} - returns the generated number.
    */
   #nextDecimalInSequence () {
     this.seed = (this.multiplier * this.seed + this.increment) % this.modulus
@@ -103,9 +116,11 @@ export class LinearCongruentialGenerator {
   }
 
   /**
+   * Generates the next random decimal.
    *
-   * @param min
-   * @param max
+   * @param {number} min - The minimum number in the range.
+   * @param {number} max - The maximum number in the range.
+   * @returns {number} - Returns the generated number or undefined if an error occurs.
    */
   nextDecimalRange (min, max) {
     if (this.error.handleMinMax(min, max)) {
@@ -113,12 +128,15 @@ export class LinearCongruentialGenerator {
       const minMaxValue = min + randomValue * (max - min)
       return minMaxValue
     }
+    return undefined
   }
 
   /**
+   * Generates the next random integer.
    *
-   * @param min
-   * @param max
+   * @param {number} min - The minimum number in the range.
+   * @param {number} max - The maximum number in the range.
+   * @returns {number} - Returns the generated number or undefined if an error occurs.
    */
   nextIntRange (min, max) {
     if (this.error.handleMinMax(min, max)) {
@@ -126,5 +144,6 @@ export class LinearCongruentialGenerator {
       const minMaxValue = min + randomValue * (max - min)
       return Math.floor(minMaxValue)
     }
+    return undefined
   }
 }

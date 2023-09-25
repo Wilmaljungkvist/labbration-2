@@ -1,5 +1,5 @@
 /**
- *
+ * This class handles the errors.
  */
 export class ErrorHandling {
   /**
