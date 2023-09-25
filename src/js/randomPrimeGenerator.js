@@ -2,11 +2,11 @@ import { LinearCongruentialGenerator } from './LinearCongruentialGenerator.js'
 import { ErrorHandling } from './errorHandling.js'
 
 /**
- *
+ * Class for an random prime generator.
  */
 export class RandomPrimeGenerator {
   /**
-   *
+   * The constructor creates a new instance of the ErrorHandling and LinearCongruentialGenerator class.
    */
   constructor () {
     this.lcg = new LinearCongruentialGenerator()
@@ -14,9 +14,11 @@ export class RandomPrimeGenerator {
   }
 
   /**
+   * Generates an random prime number between the specified range.
    *
-   * @param min
-   * @param max
+   * @param {number} min - The minimun number in the range.
+   * @param {number} max - The maximum number in the range.
+   * @returns {number} - Returns the generated prime number or undefined if an error occurs.
    */
   randomPrimeNumber (min, max) {
     let number
@@ -27,11 +29,14 @@ export class RandomPrimeGenerator {
 
       return number
     }
+    return undefined
   }
 
   /**
+   * Checks if the number is prime.
    *
-   * @param number
+   * @param {number} number - The number that is checked.
+   * @returns {boolean} Returns true if the number is a prime or false otherwise.
    */
   #isPrime (number) {
     if (number <= 1) {
@@ -51,10 +56,12 @@ export class RandomPrimeGenerator {
   }
 
   /**
+   * Creates an array with an specified amount of number between the specified range.
    *
-   * @param min
-   * @param max
-   * @param length
+   * @param {number} min - The minimum number in the range.
+   * @param {number} max - The maximum number in the range.
+   * @param {number} length - The length of the array.
+   * @returns {Array} - Returns the array or undefined if an error occurs.
    */
   randomPrimeNumberSequence (min, max, length) {
     if (this.error.handleMinMax(min, max) && length > 0) {
@@ -63,9 +70,10 @@ export class RandomPrimeGenerator {
         arr.push(this.randomPrimeNumber(min, max))
       }
       if (length <= 0) {
-        throw new error('length must be bigger than 0')
+        throw new Error('length must be bigger than 0')
       }
       return arr
     }
+    return undefined
   }
 }
