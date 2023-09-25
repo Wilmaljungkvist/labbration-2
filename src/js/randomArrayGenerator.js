@@ -2,7 +2,7 @@ import { LinearCongruentialGenerator } from './LinearCongruentialGenerator.js'
 import { ErrorHandling } from './errorHandling.js'
 
 /**
- *
+ * Class For diffrent Random Array generators.
  */
 export class RandomArrayGenerator {
   /**
