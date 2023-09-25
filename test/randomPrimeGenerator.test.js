@@ -1,70 +1,74 @@
-import { RandomPrimeGenerator } from "../src/js/randomPrimeGenerator"
+import { RandomPrimeGenerator } from '../src/js/randomPrimeGenerator'
 
 describe('RandomPrimeGenerator', () => {
-    let randomPrimeGenerator
+  let randomPrimeGenerator
 
-    beforeEach(() => {
-        randomPrimeGenerator = new RandomPrimeGenerator()
-    })
+  beforeEach(() => {
+    randomPrimeGenerator = new RandomPrimeGenerator()
+  })
 
-    test('randomPrimeNumber should return a random prime number within the range', () => {
-        let min = 10
-        let max = 20
-        for (let i = 1; i < 6; i++) {
-            const randomPrimeNumber = randomPrimeGenerator.randomPrimeNumber(min, max)
-            expect(randomPrimeNumber).toBeGreaterThanOrEqual(min)
-            expect(randomPrimeNumber).toBeLessThanOrEqual(max)
-            min += i
-            max += i
-            expect(isPrime(randomPrimeNumber)).toBe(true)
-        }
-    })
-
-    test('randomPrimeNumber should throw an error if max is smaller than min', () => {
-        const min = 10
-        const max = 1
-        expect(() => {
-            randomPrimeGenerator.randomPrimeNumber(min, max)
-        }).toThrow('Minimum must be the same or smaller than maximum.')
-    })
-
-    test('randomPrimeNumberSequence should throw an error if max is smaller than min', () => {
-        const min = 10
-        const max = 1
-        expect(() => {
-            randomPrimeGenerator.randomPrimeNumberSequence(min, max)
-        }).toThrow('Minimum must be the same or smaller than maximum.')
-    })
-
-    test('should generate a sequence of prime numbers within the given range', () => {
-        const min = 10
-        const max = 30
-        const length = 5
-        const sequence = randomPrimeGenerator.randomPrimeNumberSequence(min, max, length)
-
-        expect(sequence).toHaveLength(length)
-
-        for (let i = 0; i < sequence.length; i++) {
-            expect(sequence[i]).toBeGreaterThanOrEqual(min)
-            expect(sequence[i]).toBeLessThanOrEqual(max)
-            expect(isPrime(sequence[i])).toBe(true)
-        }
-    })
-
-    function isPrime (number) {
-        if (number <= 1) {
-            return false
-        } else if (number <= 3) {
-            return true
-        } else if (number % 2 === 0 || number % 3 === 0 ) {
-            return false
-        }
-
-        for (let i = 5; i * i <= number; i+= 6) {
-            if (number % i === 0 || number % (i + 2) === 0) {
-                return false;
-            }
-        }
-        return true
+  test('randomPrimeNumber should return a random prime number within the range', () => {
+    let min = 10
+    let max = 20
+    for (let i = 1; i < 6; i++) {
+      const randomPrimeNumber = randomPrimeGenerator.randomPrimeNumber(min, max)
+      expect(randomPrimeNumber).toBeGreaterThanOrEqual(min)
+      expect(randomPrimeNumber).toBeLessThanOrEqual(max)
+      min += i
+      max += i
+      expect(isPrime(randomPrimeNumber)).toBe(true)
     }
+  })
+
+  test('randomPrimeNumber should throw an error if max is smaller than min', () => {
+    const min = 10
+    const max = 1
+    expect(() => {
+      randomPrimeGenerator.randomPrimeNumber(min, max)
+    }).toThrow('Minimum must be the same or smaller than maximum.')
+  })
+
+  test('randomPrimeNumberSequence should throw an error if max is smaller than min', () => {
+    const min = 10
+    const max = 1
+    expect(() => {
+      randomPrimeGenerator.randomPrimeNumberSequence(min, max)
+    }).toThrow('Minimum must be the same or smaller than maximum.')
+  })
+
+  test('should generate a sequence of prime numbers within the given range', () => {
+    const min = 10
+    const max = 30
+    const length = 5
+    const sequence = randomPrimeGenerator.randomPrimeNumberSequence(min, max, length)
+
+    expect(sequence).toHaveLength(length)
+
+    for (let i = 0; i < sequence.length; i++) {
+      expect(sequence[i]).toBeGreaterThanOrEqual(min)
+      expect(sequence[i]).toBeLessThanOrEqual(max)
+      expect(isPrime(sequence[i])).toBe(true)
+    }
+  })
+
+  /**
+   *
+   * @param number
+   */
+  function isPrime (number) {
+    if (number <= 1) {
+      return false
+    } else if (number <= 3) {
+      return true
+    } else if (number % 2 === 0 || number % 3 === 0) {
+      return false
+    }
+
+    for (let i = 5; i * i <= number; i += 6) {
+      if (number % i === 0 || number % (i + 2) === 0) {
+        return false
+      }
+    }
+    return true
+  }
 })
