@@ -18,14 +18,12 @@ export class RandomNumberGenerator {
    *
    * @param {number} min - The minimum number in the range.
    * @param {number} max - The maximum number in the range.
-   * @returns {number} - Returns the generated number or undefined if an error occurs.
+   * @returns {number} - Returns the generated number.
    */
   randomInt (min, max) {
-    if (this.error.handleMinMax(min, max)) {
-      const randomInteger = this.lcg.nextIntRange(min, max)
-      return randomInteger
-    }
-    return undefined
+    this.error.handleMinMax(min, max)
+    const randomInteger = this.lcg.nextIntRange(min, max)
+    return randomInteger
   }
 
   /**
@@ -33,14 +31,12 @@ export class RandomNumberGenerator {
    *
    * @param {number} min - The minimum number in the range.
    * @param {number} max - The maximum number in the range.
-   * @returns {number} - Returns the generated number or undefined if an error occurs.
+   * @returns {number} - Returns the generated number.
    */
   randomDecimal (min, max) {
-    if (this.error.handleMinMax(min, max)) {
-      const randomDecimal = this.lcg.nextDecimalRange(min, max)
-      return randomDecimal
-    }
-    return undefined
+    this.error.handleMinMax(min, max)
+    const randomDecimal = this.lcg.nextDecimalRange(min, max)
+    return randomDecimal
   }
 
   /**

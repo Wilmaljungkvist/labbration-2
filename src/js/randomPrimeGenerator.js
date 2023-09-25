@@ -22,14 +22,12 @@ export class RandomPrimeGenerator {
    */
   randomPrimeNumber (min, max) {
     let number
-    if (this.error.handleMinMax(min, max)) {
-      do {
-        number = this.lcg.nextIntRange(min, max)
-      } while (!this.#isPrime(number))
+    this.error.handleMinMax(min, max)
+    do {
+      number = this.lcg.nextIntRange(min, max)
+    } while (!this.#isPrime(number))
 
-      return number
-    }
-    return undefined
+    return number
   }
 
   /**
@@ -61,19 +59,17 @@ export class RandomPrimeGenerator {
    * @param {number} min - The minimum number in the range.
    * @param {number} max - The maximum number in the range.
    * @param {number} length - The length of the array.
-   * @returns {Array} - Returns the array or undefined if an error occurs.
+   * @returns {Array} - Returns the array.
    */
   randomPrimeNumberSequence (min, max, length) {
-    if (this.error.handleMinMax(min, max) && length > 0) {
-      const arr = []
-      for (let i = 0; i < length; i++) {
-        arr.push(this.randomPrimeNumber(min, max))
-      }
-      if (length <= 0) {
-        throw new Error('length must be bigger than 0')
-      }
-      return arr
+    this.error.handleMinMax(min, max)
+    if (length <= 0) {
+      throw new Error('length must be bigger than 0')
     }
-    return undefined
+    const arr = []
+    for (let i = 0; i < length; i++) {
+      arr.push(this.randomPrimeNumber(min, max))
+    }
+    return arr
   }
 }

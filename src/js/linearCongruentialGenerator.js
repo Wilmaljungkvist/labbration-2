@@ -120,15 +120,13 @@ export class LinearCongruentialGenerator {
    *
    * @param {number} min - The minimum number in the range.
    * @param {number} max - The maximum number in the range.
-   * @returns {number} - Returns the generated number or undefined if an error occurs.
+   * @returns {number} - Returns the generated number.
    */
   nextDecimalRange (min, max) {
-    if (this.error.handleMinMax(min, max)) {
-      const randomValue = this.#nextDecimalInSequence()
-      const minMaxValue = min + randomValue * (max - min)
-      return minMaxValue
-    }
-    return undefined
+    this.error.handleMinMax(min, max)
+    const randomValue = this.#nextDecimalInSequence()
+    const minMaxValue = min + randomValue * (max - min)
+    return minMaxValue
   }
 
   /**
@@ -136,14 +134,12 @@ export class LinearCongruentialGenerator {
    *
    * @param {number} min - The minimum number in the range.
    * @param {number} max - The maximum number in the range.
-   * @returns {number} - Returns the generated number or undefined if an error occurs.
+   * @returns {number} - Returns the generated number.
    */
   nextIntRange (min, max) {
-    if (this.error.handleMinMax(min, max)) {
-      const randomValue = this.#nextDecimalInSequence()
-      const minMaxValue = min + randomValue * (max - min)
-      return Math.floor(minMaxValue)
-    }
-    return undefined
+    this.error.handleMinMax(min, max)
+    const randomValue = this.#nextDecimalInSequence()
+    const minMaxValue = min + randomValue * (max - min)
+    return Math.floor(minMaxValue)
   }
 }
