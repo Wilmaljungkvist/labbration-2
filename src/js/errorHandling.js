@@ -7,7 +7,7 @@ export class ErrorHandling {
    *
    * @param {number} min - The minimum value of the range.
    * @param {number} max - The maximum value of the range.
-   * @returns {boolean} - returns true if minimum is smaller than maximum.
+   * @returns {boolean} - Returns true if minimum is smaller than maximum.
    */
   handleMinMax (min, max) {
     if (max < min) {
@@ -20,7 +20,7 @@ export class ErrorHandling {
    * Returns true if the input is of type array and has a length bigger than 0.
    *
    * @param {Array} arr - The input from the user to test.
-   * @returns {boolean} - returns true.
+   * @returns {boolean} - Returns true.
    */
   handleArray (arr) {
     if (arr.length <= 0) {

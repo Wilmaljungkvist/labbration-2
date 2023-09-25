@@ -42,7 +42,7 @@ export class LinearCongruentialGenerator {
   /**
    * Checks if the current parameters are valid.
    *
-   * @returns {boolean} - returns true if the parameters are valid or false if not valid.
+   * @returns {boolean} - Returns true if the parameters are valid or false if not valid.
    */
   #isValidParameters () {
     const modulus = this.modulus
@@ -108,7 +108,7 @@ export class LinearCongruentialGenerator {
   /**
    * The next decimal in the sequence, a number between 0 and 1.
    *
-   * @returns {number} - returns the generated number.
+   * @returns {number} - Returns the generated number.
    */
   #nextDecimalInSequence () {
     this.seed = (this.multiplier * this.seed + this.increment) % this.modulus
