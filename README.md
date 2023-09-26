@@ -12,7 +12,22 @@ npm install labbration-2
 ### importera bibliotek:
 
 ```Javascript
-import { RandomArrayGenerator, RandomNumberGenerator, RandomPrimeGenerator, LinearCongruentialGenerator } from "labbration-2"
+import { RandomArrayGenerator, RandomNumberGenerator, RandomPrimeGenerator, LinearCongruentialGenerator } from 'labbration-2'
+```
+
+### Användings exempel
+
+### Användningsexempel
+
+Här är ett exempel på hur du kan använda RandomNumberGenerator för att generera slumpade tal:
+
+```javascript
+import { RandomNumberGenerator } from 'labbration-2'
+const rng = new RandomNumberGenerator()
+
+// Generera ett slumpat heltal mellan 1 och 10
+const randomNumber = rng.randomInt(1, 10)
+console.log(`Slumpat heltal: ${randomNumber}`)
 ```
 
 ## RandomArrayGenerator class
