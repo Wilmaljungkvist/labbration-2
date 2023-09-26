@@ -1,6 +1,5 @@
 # labbration-2
-
-Olika typer av slumpgeneratorer. 
+Detta är ett Javascript bibliotek som erbjuder funktioner för att slumpa fram olika typer av nummer och arrayer användandes av en linear congruential metod. Nedanför finns klasser och metoder som går att använda i detta biblitek med kodexempel.
 
 randomInt:
 Väljer mellan vilka tal det ska slumpas fram ett tal.
