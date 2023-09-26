@@ -8,17 +8,13 @@ export class LinearCongruentialGenerator {
    * The constructor creates a new instance of the ErrorHandling class.
    * This constructor also initializes the generator with default values for its properties and generates valid parameters for the linear congruential method.
    *
-   * @param {number} seed - The seed for the linear congruential generator.
-   * @param {number} multiplier - The multiplier for the linear congruential generator.
-   * @param {number} increment - The increment for the linear congruential generator.
-   * @param {number} modulus - The modulus for the linear congruential generator.
    */
-  constructor (seed = 0, multiplier = 0, increment = 0, modulus = 0) {
+  constructor () {
     this.error = new ErrorHandling()
-    this.seed = seed
-    this.multiplier = multiplier
-    this.increment = increment
-    this.modulus = modulus
+    this.seed = 0
+    this.multiplier = 0
+    this.increment = 0
+    this.modulus = 0
     this.parametersGenerated = false
 
     if (!this.parametersGenerated) {
