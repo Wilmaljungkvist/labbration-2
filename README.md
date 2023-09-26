@@ -1,30 +1,19 @@
 # labbration-2
 Detta är ett Javascript bibliotek som erbjuder funktioner för att slumpa fram olika typer av nummer och arrayer användandes av en linear congruential metod. Nedanför finns klasser och metoder som går att använda i detta biblitek tillsammans med kodexempel.
 
-## ErrorHandling class
+## Installation
 
-ErrorHandlling klassen hanterar fel relaterade till minimum, maximum och validering av arrayer.
+### Installera detta bibliotek med npm:
 
-### handleMinMax(min, max)
-Kastar ett fel om minimum är större än maximum.
-Exempel på hur denna klass kan användas:
-
-```Javascript
-const error = new ErrorHandling()
-error.handleMinMax(1, 5) // Retunerar true.
-error.handleMinMax(5, 1) // Kastar ett fel: "Minimum must be the same or smaller than maximum."
+```bash
+npm install labbration-2
 ```
 
-### handleArray(arr)
-Kastar ett fel om arrayen har en längd på 0 eller mindre och om inputen inte är av typen array.
+### importera bibliotek:
 
 ```Javascript
-const error = new ErrorHandling()
-error.handleArray([1, 2, 3]) // Returnerar true.
-error.handleArray([]) // Kastar ett fel: "Array can not be empty."
-error.handleArray("inte en array") // Kastar ett fel: "Must be an array."
+import { RandomArrayGenerator, RandomNumberGenerator, RandomPrimeGenerator, LinearCongruentialGenerator } from "labbration-2"
 ```
-
 
 ## RandomArrayGenerator class
 Klass med metoder som kan slumpa ett index i en array och generera en array med slumpade nummer mellan ett specificerat intervall och längd.
@@ -100,7 +89,7 @@ randomPrimeGen.randomPrimeNumber(1, 100) // Returnerar ett slumpat primtal mella
 Retunerar en array med slumpade primtal baserat på den specifiserade längden och intervallet.
 
 ```Javascript
-const randomPrimeGen = new RandomPrimeGenerator();
+const randomPrimeGen = new RandomPrimeGenerator()
 randomPrimeGen.randomPrimeNumberSequence(1, 100, 5) // Retunerar en array med 5 nummer och numrerna är mellan 1-100.
 ```
 
@@ -131,4 +120,29 @@ Genererar ett slumpat heltal mellan ett specifikt intervall.
 ```Javascript
 const lcg = new LinearCongruentialGenerator()
 lcg.nextIntRange(1, 10) // Retunerar ett slumpat heltal mellan 1 - 10
+```
+
+
+## ErrorHandling class
+
+ErrorHandlling klassen hanterar fel relaterade till minimum, maximum och validering av arrayer.
+
+### handleMinMax(min, max)
+Kastar ett fel om minimum är större än maximum.
+Exempel på hur denna klass kan användas:
+
+```Javascript
+const error = new ErrorHandling()
+error.handleMinMax(1, 5) // Retunerar true.
+error.handleMinMax(5, 1) // Kastar ett fel: "Minimum must be the same or smaller than maximum."
+```
+
+### handleArray(arr)
+Kastar ett fel om arrayen har en längd på 0 eller mindre och om inputen inte är av typen array.
+
+```Javascript
+const error = new ErrorHandling()
+error.handleArray([1, 2, 3]) // Returnerar true.
+error.handleArray([]) // Kastar ett fel: "Array can not be empty."
+error.handleArray("inte en array") // Kastar ett fel: "Must be an array."
 ```
