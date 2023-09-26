@@ -9,18 +9,21 @@ ErrorHandlling klassen hanterar fel relaterade till minimum, maximum och valider
 Kastar ett fel om minimum är större än maximum.
 Exempel på hur denna metod kan användas:
 
+```Javascript
 const error = new ErrorHandling()
 error.handleMinMax(1, 5) // Retunerar true.
 error.handleMinMax(5, 1) // Kastar ett fel: "Minimum must be the same or smaller than maximum."
+```
 
 ### handleArray(arr)
 Kastar ett fel om arrayen har en längd på 0 eller mindre och om inputen inte är av typen array.
 
+```Javascript
 const error = new ErrorHandling()
 error.handleArray([1, 2, 3]) // Returnerar true.
 error.handleArray([]) // Kastar ett fel: "Array can not be empty."
 error.handleArray("inte en array") // Kastar ett fel: "Must be an array."
-
+```
 
 randomInt:
 Väljer mellan vilka tal det ska slumpas fram ett tal.
