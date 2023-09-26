@@ -43,9 +43,6 @@ export class RandomArrayGenerator {
     for (let i = 0; i < length; i++) {
       arr.push(this.lcg.nextIntRange(min, max))
     }
-    if (length <= 0) {
-      throw new Error('length must be bigger than 0')
-    }
     const shuffledArray = this.shuffleArray(arr)
     return shuffledArray
   }
