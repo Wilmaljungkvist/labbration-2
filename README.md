@@ -161,3 +161,7 @@ error.handleArray([1, 2, 3]) // Returnerar true.
 error.handleArray([]) // Kastar ett fel: "Array can not be empty."
 error.handleArray("inte en array") // Kastar ett fel: "Must be an array."
 ```
+
+### License
+
+This project is licensed under the [GNU General Public License v3.0](LICENSE). You can find the full text of the license in the [LICENSE](LICENSE.txt) file.
