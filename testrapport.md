@@ -5,6 +5,10 @@ Vad som testas:
 Hur det testas: 
 testresultat:
 
+
 Automatiska tester: 
-Kör via terminalen med: npm run test
+Kör via terminalen med: 
+```bash
+npm run test
+```
 ![Alt Text](images/automaticTests.png)

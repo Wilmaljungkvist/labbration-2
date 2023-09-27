@@ -26,7 +26,6 @@ export class RandomPrimeGenerator {
     do {
       number = this.lcg.nextIntRange(min, max)
     } while (!this.#isPrime(number))
-
     return number
   }
 

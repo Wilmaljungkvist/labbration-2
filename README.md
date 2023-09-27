@@ -1,5 +1,5 @@
 # labbration-2
-## Random Number and Array Generator Library
+## Random Number and Array Generator
 
 Detta är ett Javascript bibliotek som erbjuder funktioner för att slumpa fram olika typer av nummer och arrayer som använder sig av en linear congruential metod. Nedanför finns klasser och metoder som går att använda i detta bibliotek tillsammans med kodexempel.
 
