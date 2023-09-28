@@ -185,8 +185,8 @@ return shuffledArray
 
 Denna funktion hade kunnat ha ett mer beskrivande namn för att göra koden lättare att läsa. Inte bara är namnet inte tillräckligt beskrivande, funktionen utför också flera uppgifter. Den hanterar både en array och kastar ett fel om längden är mindre än eller lika med noll. Där den kastar ett fel skulle kunna brytas ut till felhantering klassen. Ett mer passande namn skulle kunna vara 'generateRandomArray' för att ge en tydligare beskrivning av dess syfte. Dessutom kan ordet 'sequence' vara en synonym för 'array', vilket kan vara förvirrande.
 
-**Function Arguments:\
-**Enligt boken bör en funktion helst inte ha några argument, och att ha tre argument bör undvikas så mycket som möjligt. Jag håller dock inte med om detta i fallet med denna funktion, eftersom den genererar en array baserad på 'min', 'max', och 'length', vilket gör det nödvändigt att ha tre argument.
+**Function Arguments:**
+Enligt boken bör en funktion helst inte ha några argument, och att ha tre argument bör undvikas så mycket som möjligt. Jag håller dock inte med om detta i fallet med denna funktion, eftersom den genererar en array baserad på 'min', 'max', och 'length', vilket gör det nödvändigt att ha tre argument.
 </td>
 </tr>
 <tr>
