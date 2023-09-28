@@ -27,7 +27,7 @@ describe('RandomNumberGenerator', () => {
     }).toThrow('Minimum must be the same or smaller than maximum.')
   })
 
-  test('should return a random Boolean, true or false', () => {
+  test('RabdomBoolean should return a random Boolean, true or false', () => {
     const result = randomNumberGenerator.randomBoolean()
     expect(result).toEqual(expect.any(Boolean))
   })

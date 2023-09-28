@@ -36,7 +36,7 @@ describe('RandomPrimeGenerator', () => {
     }).toThrow('Minimum must be the same or smaller than maximum.')
   })
 
-  test('should generate a sequence of prime numbers within the given range', () => {
+  test('randomPrimeNumberSequence should generate a sequence of prime numbers within the given range', () => {
     const min = 10
     const max = 30
     const length = 5
@@ -52,8 +52,10 @@ describe('RandomPrimeGenerator', () => {
   })
 
   /**
+   * Function for testing if a number is Prime.
    *
-   * @param number
+   * @param {number} number - The number getting tested.
+   * @returns {boolean} - Returns true if the number is a prime.
    */
   function isPrime (number) {
     if (number <= 1) {

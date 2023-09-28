@@ -1,7 +1,7 @@
 {
-  "name": "labbration-2",
-  "version": "1.0.2",
-  "description": "Slumpgenerator",
+  "name": "slumpgenerator",
+  "version": "1.0.3",
+  "description": "Slumpgenerator av olika slag",
   "main": "index.js",
   "type": "module",
   "scripts": {
@@ -18,14 +18,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Wilmaljungkvist/labbration-2.git"
+    "url": "git+https://github.com/Wilmaljungkvist/slumpgenerator.git"
   },
   "author": "Wilma Ljungkvist <wl222ek@student.lnu.se>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Wilmaljungkvist/labbration-2/issues"
+    "url": "https://github.com/Wilmaljungkvist/slumpgenerator/issues"
   },
-  "homepage": "https://github.com/Wilmaljungkvist/labbration-2#readme",
+  "homepage": "https://github.com/Wilmaljungkvist/slumpgenerator#readme",
   "devDependencies": {
     "@babel/preset-env": "^7.22.20",
     "jest": "^29.7.0"

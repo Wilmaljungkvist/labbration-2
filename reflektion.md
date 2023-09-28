@@ -314,6 +314,6 @@ Jag håller med om boken när det gäller att kasta undantag istället för att 
 När det kommer till antalet argument i mina funktioner, säger boken att de ska hållas lågt. I vissa av mina metoder har jag dock flera argument, upp till tre.  Jag anser att dessa argument är nödvändiga för att det ska fungera som tänkt, men det kanske finns en mer effektiv metod att hantera dem och undvika att ha många argument i en och samma funktion. 
 
 
-### Reflektion på hela labbration-2
+### Reflektion på hela slumpgeneratorn
 
 Denna uppgift har varit mycket lärorik och har fått mig att reflektera mycket över min egen kodkvalitet och de två kapitel jag har läst i boken. Det har varit mycket intressant att se vad jag redan gör men få en förklaring till varför, samt att få det på svart och vitt hur det ska vara. Jag kommer att ta med mig mycket från dessa kapitel, och det mest tydliga är att jag kommer att använda mer beskrivande namn och faktiskt lägga ner lite tid på att välja namn istället för att bara ta det första och bästa. Metoder/funktioner kommer jag va väldigt noga med att lägga till ett verb i början också då jag insett att de är viktigt för att få koden tydlig. Jag kommer också att ägna mer tid åt att bryta ut delar av funktioner till nya funktioner för att öka läsbarheten och se till att funktionerna endast har en uppgift. Genom att fortsätta att följa de saker jag lärt mig med denna uppgift kommer jag att kunna förbättra min kodkvalitet och göra min kod ännu mer underhållbar och lättförståelig för andra utvecklare.

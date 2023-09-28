@@ -1,4 +1,4 @@
-# labbration-2
+# slumpgenerator
 ## Random Number and Array Generator
 
 Detta är ett Javascript bibliotek som erbjuder funktioner för att slumpa fram olika typer av nummer och arrayer som använder sig av en linear congruential metod. Nedanför finns klasser och metoder som går att använda i detta bibliotek tillsammans med kodexempel.
@@ -8,13 +8,13 @@ Detta är ett Javascript bibliotek som erbjuder funktioner för att slumpa fram 
 ### Installera detta bibliotek med npm:
 
 ```bash
-npm install labbration-2
+npm install slumpgenerator
 ```
 
 ### importera biblioteket:
 
 ```Javascript
-import { RandomArrayGenerator, RandomNumberGenerator, RandomPrimeGenerator, LinearCongruentialGenerator } from 'labbration-2'
+import { RandomArrayGenerator, RandomNumberGenerator, RandomPrimeGenerator, LinearCongruentialGenerator } from 'slumpgenerator'
 ```
 
 ### Användningsexempel
@@ -22,7 +22,7 @@ import { RandomArrayGenerator, RandomNumberGenerator, RandomPrimeGenerator, Line
 Här är ett exempel på hur du kan använda RandomNumberGenerator för att generera slumpade tal:
 
 ```javascript
-import { RandomNumberGenerator } from 'labbration-2'
+import { RandomNumberGenerator } from 'slumpgenerator'
 const rng = new RandomNumberGenerator()
 
 // Generera ett slumpat heltal mellan 1 och 10
