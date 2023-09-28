@@ -39,4 +39,5 @@ handleArray och handleMinMax testas i samband med de metoder som använder sig a
 
 
 ## 28/9-23: Alla test är godkända (21 passed, 21 total)
+Finns inga kända buggar.
 ![Alt Text](images/automaticTests.png)
