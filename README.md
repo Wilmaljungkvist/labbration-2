@@ -107,6 +107,31 @@ const randomPrimeGen = new RandomPrimeGenerator()
 randomPrimeGen.randomPrimeNumberSequence(1, 100, 5) // Returnerar en array med 5 primtal och primtalen är mellan 1-100.
 ```
 
+### Till utvecklare som vill bidra till koden.
+
+#### Issues
+https://github.com/Wilmaljungkvist/slumpgenerator/issues
+
+1. 
+Klona projektet, detta kommando klonar projektet.
+```bash
+git clone https://github.com/Wilmaljungkvist/slumpgenerator.git 
+```
+2. 
+Skapa en separat gren.
+```bash
+git checkout -b din-gren-namn
+```
+
+3. 
+Pusha sedan dina ändringar till den nya grenen.
+
+4. 
+Gör sedan en pull request från din egen gren till main grenen. 
+
+För frågor går det bra att maila:
+wl222ek@student.lnu.se
+
 ### License
 
 This project is licensed under the [GNU General Public License v3.0](LICENSE). You can find the full text of the license in the [LICENSE](LICENSE.txt) file.
