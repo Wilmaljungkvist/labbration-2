@@ -100,7 +100,7 @@ Denna variabel är en förkortning av “temporarily” och vet inte en ny perso
 </table>
 
 
-**Kort reflektion på kapitel 2:**
+### Reflektion på kapitel 2
 
 När jag reflekterar över innehållet i boken och mina egna namn finns det en del saker jag hade kunnat göra bättre. 
 
@@ -303,7 +303,7 @@ Om jag skulle separera felhanteringen i den här koden och inkludera felhanterin
 </table>
 
 
-Kort reflektion på kapitel 3.
+### Reflektion på kapitel 3
 
 När jag reflekterar innehållet i kapitel 3 med min kod är det några få saker jag kom att tänka på. 
 
@@ -311,4 +311,9 @@ Jag är bra på att skapa små metoder med beskrivande namn som förklarar vad d
 
 Jag håller med om boken när det gäller att kasta undantag istället för att returnera felkod. Om det enbart skulle returnera felkod skulle det bli lätt att missa vad som är fel. Men om det kastas undantag så kommer det förhoppningsvis att krascha och då kommer den som håller på med koden att identifiera snabbt vad som är fel. Även principen att undvika upprepning av kod (DRY) är en värdefull lärdom. I början av utbildningen tyckte jag att det var jobbigt med alla påminnelser om DRY och att aldrig upprepa kod flera gånger utan att bryta ut det i flera funktioner. Men nu, efter ett år, har jag insett hur mycket lättare det är att läsa och underhålla koden. Jag sparar även tid på att inte upprepa koden och kan istället fokusera på andra delar av kodandet.
 
-När det kommer till antalet argument i mina funktioner, säger boken att de ska hållas lågt. I vissa av mina metoder har jag dock flera argument, upp till tre.  Jag anser att dessa argument är nödvändiga för att det ska fungera som tänkt, men det kanske finns en mer effektiv metod att hantera dem och undvika att ha många argument i en och samma funktion. Jag tycker att detta kapitel har varit en lärdom för att få en större förståelse kring varför kod ska skrivas på ett visst sätt.
+När det kommer till antalet argument i mina funktioner, säger boken att de ska hållas lågt. I vissa av mina metoder har jag dock flera argument, upp till tre.  Jag anser att dessa argument är nödvändiga för att det ska fungera som tänkt, men det kanske finns en mer effektiv metod att hantera dem och undvika att ha många argument i en och samma funktion. 
+
+
+### Reflektion på hela labbration-2
+
+Denna uppgift har varit mycket lärorik och har fått mig att reflektera mycket över min egen kodkvalitet och de två kapitel jag har läst i boken. Det har varit mycket intressant att se vad jag redan gör men få en förklaring till varför, samt att få det på svart och vitt hur det ska vara. Jag kommer att ta med mig mycket från dessa kapitel, och det mest tydliga är att jag kommer att använda mer beskrivande namn och faktiskt lägga ner lite tid på att välja namn istället för att bara ta det första och bästa. Metoder/funktioner kommer jag va väldigt noga med att lägga till ett verb i början också då jag insett att de är viktigt för att få koden tydlig. Jag kommer också att ägna mer tid åt att bryta ut delar av funktioner till nya funktioner för att öka läsbarheten och se till att funktionerna endast har en uppgift. Genom att fortsätta att följa de saker jag lärt mig med denna uppgift kommer jag att kunna förbättra min kodkvalitet och göra min kod ännu mer underhållbar och lättförståelig för andra utvecklare.
