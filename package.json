@@ -1,6 +1,6 @@
 {
   "name": "slumpgenerator",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Slumpgenerator av olika slag",
   "main": "index.js",
   "type": "module",
