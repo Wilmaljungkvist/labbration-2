@@ -45,7 +45,7 @@ export class LinearCongruentialGenerator {
     const multiplier = this.multiplier
     const increment = this.increment
 
-    if (!this.#isPrime(modulus)) {
+    if (!this.isPrime(modulus)) {
       return false
     }
 
@@ -84,7 +84,7 @@ export class LinearCongruentialGenerator {
    * @param {number} number - The number that is going to be checked if prime or not.
    * @returns {boolean} - Returns true if the number is prime and false if not prime.
    */
-  #isPrime (number) {
+  isPrime (number) {
     if (number <= 1) {
       return false
     } else if (number <= 3) {
@@ -118,7 +118,7 @@ export class LinearCongruentialGenerator {
    * @param {number} max - The maximum number in the range.
    * @returns {number} - Returns the generated number.
    */
-  nextDecimalRange (min, max) {
+  getNextDecimalRange (min, max) {
     this.error.handleMinMax(min, max)
     const randomValue = this.#nextDecimalInSequence()
     const minMaxValue = min + randomValue * (max - min)
@@ -132,7 +132,7 @@ export class LinearCongruentialGenerator {
    * @param {number} max - The maximum number in the range.
    * @returns {number} - Returns the generated number.
    */
-  nextIntRange (min, max) {
+  getNextIntRange (min, max) {
     this.error.handleMinMax(min, max)
     const randomValue = this.#nextDecimalInSequence()
     const minMaxValue = min + randomValue * (max - min)
