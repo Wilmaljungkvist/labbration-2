@@ -39,9 +39,7 @@ export class RandomPrimeGenerator {
    */
   getRandomPrimeNumberSequence (min, max, length) {
     this.error.handleMinMax(min, max)
-    if (length <= 0) {
-      throw new Error('length must be bigger than 0')
-    }
+    this.error.handleLength(length)
     const arr = []
     for (let i = 0; i < length; i++) {
       arr.push(this.randomPrimeNumber(min, max))

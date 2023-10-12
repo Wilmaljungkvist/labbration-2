@@ -31,4 +31,15 @@ export class ErrorHandling {
       return true
     }
   }
+
+  /**
+   * The length inputet for the array.
+   *
+   * @param {number} length - the length the use inputs.
+   */
+  handleLength (length) {
+    if (length <= 0) {
+      throw new Error('length must be bigger than 0')
+    }
+  }
 }
