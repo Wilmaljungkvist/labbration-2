@@ -20,7 +20,7 @@ export class RandomPrimeGenerator {
    * @param {number} max - The maximum number in the range.
    * @returns {number} - Returns the generated prime number or undefined if an error occurs.
    */
-  randomPrimeNumber (min, max) {
+  getRandomPrimeNumber (min, max) {
     let number
     this.error.handleMinMax(min, max)
     do {
@@ -60,7 +60,7 @@ export class RandomPrimeGenerator {
    * @param {number} length - The length of the array.
    * @returns {Array} - Returns the array.
    */
-  randomPrimeNumberSequence (min, max, length) {
+  getRandomPrimeNumberSequence (min, max, length) {
     this.error.handleMinMax(min, max)
     if (length <= 0) {
       throw new Error('length must be bigger than 0')
