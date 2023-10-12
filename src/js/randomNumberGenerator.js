@@ -20,7 +20,7 @@ export class RandomNumberGenerator {
    * @param {number} max - The maximum number in the range.
    * @returns {number} - Returns the generated number.
    */
-  randomInt (min, max) {
+  getRandomInt (min, max) {
     this.error.handleMinMax(min, max)
     const randomInteger = this.lcg.nextIntRange(min, max)
     return randomInteger
@@ -33,7 +33,7 @@ export class RandomNumberGenerator {
    * @param {number} max - The maximum number in the range.
    * @returns {number} - Returns the generated number.
    */
-  randomDecimal (min, max) {
+  getRandomDecimal (min, max) {
     this.error.handleMinMax(min, max)
     const randomDecimal = this.lcg.nextDecimalRange(min, max)
     return randomDecimal
@@ -44,7 +44,7 @@ export class RandomNumberGenerator {
    *
    * @returns {boolean} - Returns the boolean.
    */
-  randomBoolean () {
+  getRandomBoolean () {
     const lcg = new LinearCongruentialGenerator()
     const oneOrTwo = lcg.nextIntRange(1, 2)
     if (oneOrTwo === 1) {
