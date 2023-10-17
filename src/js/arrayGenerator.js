@@ -23,7 +23,7 @@ export class ArrayGenerator {
   getRandomArrayIndex (arr) {
     this.error.validateArray(arr)
     const length = arr.length
-    const randomIndex = this.numberGenerator.nextIntRange(0, length - 1)
+    const randomIndex = this.numberGenerator.getNextIntRange(0, length - 1)
     return randomIndex
   }
 
@@ -36,14 +36,14 @@ export class ArrayGenerator {
    * @param {number} length - The length of the array.
    * @returns {Array} - Returns the array with the numbers.
    */
-  GetRandomArray (min, max, length) {
+  getRandomArray (min, max, length) {
     this.error.validateMinMaxRange(min, max)
     this.error.validateLength(length)
     const arr = []
     for (let i = 0; i < length; i++) {
-      arr.push(this.numberGenerator.nextIntRange(min, max))
+      arr.push(this.numberGenerator.getNextIntRange(min, max))
     }
-    const shuffledArray = this.shuffleArray(arr)
+    const shuffledArray = this.getShuffledArray(arr)
     return shuffledArray
   }
 
@@ -57,7 +57,7 @@ export class ArrayGenerator {
   getShuffledArray (arr) {
     const shuffledArray = [...arr]
     for (let i = shuffledArray.length - 1; i > 0; i--) {
-      const randomIndex = this.lcg.nextIntRange(0, i)
+      const randomIndex = this.numberGenerator.getNextIntRange(0, i)
       const temporary = shuffledArray[i]
       shuffledArray[i] = shuffledArray[randomIndex]
       shuffledArray[randomIndex] = temporary
