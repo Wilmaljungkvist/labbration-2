@@ -22,7 +22,7 @@ export class RandomPrimeGenerator {
    */
   getRandomPrimeNumber (min, max) {
     let number
-    this.error.handleMinMax(min, max)
+    this.error.validateMinMaxRange(min, max)
     do {
       number = this.lcg.nextIntRange(min, max)
     } while (!this.lcg.isPrime(number))
@@ -38,8 +38,8 @@ export class RandomPrimeGenerator {
    * @returns {Array} - Returns the array.
    */
   getRandomPrimeNumberSequence (min, max, length) {
-    this.error.handleMinMax(min, max)
-    this.error.handleLength(length)
+    this.error.validateMinMaxRange(min, max)
+    this.error.validateLength(length)
     const arr = []
     for (let i = 0; i < length; i++) {
       arr.push(this.randomPrimeNumber(min, max))

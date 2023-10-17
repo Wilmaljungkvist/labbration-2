@@ -21,7 +21,7 @@ export class RandomNumberGenerator {
    * @returns {number} - Returns the generated number.
    */
   getRandomInt (min, max) {
-    this.error.handleMinMax(min, max)
+    this.error.validateMinMaxRange(min, max)
     const randomInteger = this.lcg.nextIntRange(min, max)
     return randomInteger
   }
@@ -34,7 +34,7 @@ export class RandomNumberGenerator {
    * @returns {number} - Returns the generated number.
    */
   getRandomDecimal (min, max) {
-    this.error.handleMinMax(min, max)
+    this.error.validateMinMaxRange(min, max)
     const randomDecimal = this.lcg.nextDecimalRange(min, max)
     return randomDecimal
   }

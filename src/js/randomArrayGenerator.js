@@ -20,7 +20,7 @@ export class RandomArrayGenerator {
    * @returns {number} - Returns the random array index.
    */
   getRandomArrayIndex (arr) {
-    this.error.handleArray(arr)
+    this.error.validateArray(arr)
     const length = arr.length
     const randomIndex = this.lcg.nextIntRange(0, length - 1)
     return randomIndex
@@ -35,8 +35,8 @@ export class RandomArrayGenerator {
    * @returns {Array} - Returns the array with the numbers.
    */
   GetRandomArray (min, max, length) {
-    this.error.handleMinMax(min, max)
-    this.error.handleLength(length)
+    this.error.validateMinMaxRange(min, max)
+    this.error.validateLength(length)
     const arr = []
     for (let i = 0; i < length; i++) {
       arr.push(this.lcg.nextIntRange(min, max))
