@@ -1,17 +1,17 @@
-import { RandomPrimeGenerator } from '../src/js/randomPrimeGenerator'
+import { PrimeGenerator } from '../src/js/primeGenerator'
 
-describe('RandomPrimeGenerator', () => {
-  let randomPrimeGenerator
+describe('PrimeGenerator', () => {
+  let primeGenerator
 
   beforeEach(() => {
-    randomPrimeGenerator = new RandomPrimeGenerator()
+    primeGenerator = new PrimeGenerator()
   })
 
   test('randomPrimeNumber should return a random prime number within the range', () => {
     let min = 10
     let max = 20
     for (let i = 1; i < 6; i++) {
-      const randomPrimeNumber = randomPrimeGenerator.randomPrimeNumber(min, max)
+      const randomPrimeNumber = primeGenerator.getRandomPrimeNumber(min, max)
       expect(randomPrimeNumber).toBeGreaterThanOrEqual(min)
       expect(randomPrimeNumber).toBeLessThanOrEqual(max)
       min += i
@@ -24,7 +24,7 @@ describe('RandomPrimeGenerator', () => {
     const min = 10
     const max = 1
     expect(() => {
-      randomPrimeGenerator.randomPrimeNumber(min, max)
+      primeGenerator.getRandomPrimeNumber(min, max)
     }).toThrow('Minimum must be the same or smaller than maximum.')
   })
 
@@ -32,7 +32,7 @@ describe('RandomPrimeGenerator', () => {
     const min = 10
     const max = 1
     expect(() => {
-      randomPrimeGenerator.randomPrimeNumberSequence(min, max)
+      primeGenerator.getRandomPrimeNumberSequence(min, max)
     }).toThrow('Minimum must be the same or smaller than maximum.')
   })
 
@@ -40,7 +40,7 @@ describe('RandomPrimeGenerator', () => {
     const min = 10
     const max = 30
     const length = 5
-    const sequence = randomPrimeGenerator.randomPrimeNumberSequence(min, max, length)
+    const sequence = primeGenerator.getRandomPrimeNumberSequence(min, max, length)
 
     expect(sequence).toHaveLength(length)
 

@@ -25,7 +25,7 @@ export class PrimeGenerator {
     let number
     this.error.validateMinMaxRange(min, max)
     do {
-      number = this.numberGenerator.nextIntRange(min, max)
+      number = this.numberGenerator.getNextIntRange(min, max)
     } while (!this.numberGenerator.isPrime(number))
     return number
   }
@@ -43,7 +43,7 @@ export class PrimeGenerator {
     this.error.validateLength(length)
     const arr = []
     for (let i = 0; i < length; i++) {
-      arr.push(this.randomPrimeNumber(min, max))
+      arr.push(this.getRandomPrimeNumber(min, max))
     }
     return arr
   }
