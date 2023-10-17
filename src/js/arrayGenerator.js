@@ -2,12 +2,10 @@ import { LinearCongruentialGenerator } from './LinearCongruentialGenerator.js'
 import { ErrorHandling } from './errorHandling.js'
 
 /**
- * Class For diffrent Random Array generators.
+ * Class that has diffrent types of array generators.
  */
 export class ArrayGenerator {
-  /**
-   * The constructor creates a new instance of the ErrorHandling and LinearCongruentialGenerator class.
-   */
+ 
   constructor () {
     this.numberGenerator = new LinearCongruentialGenerator()
     this.error = new ErrorHandling()
@@ -17,7 +15,7 @@ export class ArrayGenerator {
    * Generates an random array index based on the chosen array.
    * Throws error if array is empty.
    *
-   * @param {Array} arr - The array.
+   * @param {Array} arr - The array that is getting a random index.
    * @returns {number} - Returns the random array index.
    */
   getRandomArrayIndex (arr) {

@@ -1,6 +1,4 @@
-/**
- * This class handles the errors.
- */
+
 export class ErrorHandling {
   /**
    * Throws an error if minimum is a bigger number than maximum.
