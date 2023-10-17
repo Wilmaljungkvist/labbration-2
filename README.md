@@ -32,6 +32,9 @@ const rng = new RandomNumberGenerator()
 const randomNumber = rng.randomInt(1, 10)
 console.log(`Slumpat heltal: ${randomNumber}`)
 ```
+```bash
+Slumpat heltal: 1
+```
 
 ## RandomArrayGenerator class
 Klass med metoder som slumpar ett index i en array och genererar en array med slumpade nummer mellan ett specificerat intervall och längd.
@@ -47,7 +50,11 @@ Returnerar ett slumpat index i den inskickade arrayen.
 ```Javascript
 const randomArrayGen = new RandomArrayGenerator()
 const arr = [10, 20, 30, 40, 50]
-randomArrayGen.randomArrayIndex(arr) // Returnerar de slumpade index från arrayen.
+const index = randomArrayGen.randomArrayIndex(arr) // Returnerar de slumpade index från arrayen.
+console.log(index)
+```
+```bash
+1
 ```
 
 ## randomSequenceArray(min, max, length)
@@ -55,7 +62,11 @@ En metod som genererar en array baserat på inskickade min, max och length värd
 
 ```Javascript
 const randomArrayGen = new RandomArrayGenerator()
-randomArrayGen.randomSequenceArray(1, 100, 5) // Returnerar en array som innehåller 5 nummer mellan 1-100.
+const arr = randomArrayGen.randomSequenceArray(1, 100, 5) // Returnerar en array som innehåller 5 nummer mellan 1-100.
+console.log(arr)
+```
+```bash
+[4, 78, 34, 75, 65]
 ```
 
 ## RandomNumberGenerator class
