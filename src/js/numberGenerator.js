@@ -23,7 +23,7 @@ export class NumberGenerator {
    */
   getRandomInt (min, max) {
     this.error.validateMinMaxRange(min, max)
-    const randomInteger = this.numberGenerator.nextIntRange(min, max)
+    const randomInteger = this.numberGenerator.getNextIntRange(min, max)
     return randomInteger
   }
 
@@ -37,7 +37,7 @@ export class NumberGenerator {
    */
   getRandomDecimal (min, max) {
     this.error.validateMinMaxRange(min, max)
-    const randomDecimal = this.numberGenerator.nextDecimalRange(min, max)
+    const randomDecimal = this.numberGenerator.getNextDecimalRange(min, max)
     return randomDecimal
   }
 
@@ -47,7 +47,7 @@ export class NumberGenerator {
    * @returns {boolean} - Returns the boolean.
    */
   getRandomBoolean () {
-    const oneOrTwo = this.numberGenerator.nextIntRange(1, 2)
+    const oneOrTwo = this.numberGenerator.getNextIntRange(1, 2)
     if (oneOrTwo === 1) {
       return true
     } else {
