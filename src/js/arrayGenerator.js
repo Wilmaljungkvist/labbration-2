@@ -4,17 +4,18 @@ import { ErrorHandling } from './errorHandling.js'
 /**
  * Class For diffrent Random Array generators.
  */
-export class RandomArrayGenerator {
+export class ArrayGenerator {
   /**
    * The constructor creates a new instance of the ErrorHandling and LinearCongruentialGenerator class.
    */
   constructor () {
-    this.lcg = new LinearCongruentialGenerator()
+    this.numberGenerator = new LinearCongruentialGenerator()
     this.error = new ErrorHandling()
   }
 
   /**
    * Generates an random array index based on the chosen array.
+   * Throws error if array is empty.
    *
    * @param {Array} arr - The array.
    * @returns {number} - Returns the random array index.
@@ -22,12 +23,13 @@ export class RandomArrayGenerator {
   getRandomArrayIndex (arr) {
     this.error.validateArray(arr)
     const length = arr.length
-    const randomIndex = this.lcg.nextIntRange(0, length - 1)
+    const randomIndex = this.numberGenerator.nextIntRange(0, length - 1)
     return randomIndex
   }
 
   /**
    * Generates and array with random numbers depending on min, max values and the specified length. The array gets shuffles before it's returned.
+   * Throws error if max is less than min and lenght is 0 or less.
    *
    * @param {number} min - The minimum value of the numbers in the array.
    * @param {number} max - The maximum value of the numbers in the array.
@@ -39,7 +41,7 @@ export class RandomArrayGenerator {
     this.error.validateLength(length)
     const arr = []
     for (let i = 0; i < length; i++) {
-      arr.push(this.lcg.nextIntRange(min, max))
+      arr.push(this.numberGenerator.nextIntRange(min, max))
     }
     const shuffledArray = this.shuffleArray(arr)
     return shuffledArray
@@ -47,6 +49,7 @@ export class RandomArrayGenerator {
 
   /**
    * Method for shuffling an array.
+   * Throws error if array is empty.
    *
    * @param {Array} arr - The array that is going to get shuffled.
    * @returns {Array} - Returns the shuffled array.
@@ -55,9 +58,9 @@ export class RandomArrayGenerator {
     const shuffledArray = [...arr]
     for (let i = shuffledArray.length - 1; i > 0; i--) {
       const randomIndex = this.lcg.nextIntRange(0, i)
-      const temp = shuffledArray[i]
+      const temporary = shuffledArray[i]
       shuffledArray[i] = shuffledArray[randomIndex]
-      shuffledArray[randomIndex] = temp
+      shuffledArray[randomIndex] = temporary
     }
     return shuffledArray
   }

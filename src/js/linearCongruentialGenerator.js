@@ -59,7 +59,6 @@ export class LinearCongruentialGenerator {
         return false
       }
     }
-
     return true
   }
 
@@ -93,7 +92,6 @@ export class LinearCongruentialGenerator {
     } else if (number % 2 === 0 || number % 3 === 0) {
       return false
     }
-
     for (let i = 5; i * i <= number; i += 6) {
       if (number % i === 0 || number % (i + 2) === 0) {
         return false
@@ -114,6 +112,7 @@ export class LinearCongruentialGenerator {
 
   /**
    * Generates the next random decimal.
+   * Throws error if max is less than min.
    *
    * @param {number} min - The minimum number in the range.
    * @param {number} max - The maximum number in the range.
@@ -128,6 +127,7 @@ export class LinearCongruentialGenerator {
 
   /**
    * Generates the next random integer.
+   * Throws error if max is less than min.
    *
    * @param {number} min - The minimum number in the range.
    * @param {number} max - The maximum number in the range.

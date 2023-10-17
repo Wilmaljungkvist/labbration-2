@@ -20,7 +20,7 @@ export class ErrorHandling {
    * Returns true if the input is of type array and has a length bigger than 0.
    *
    * @param {Array} arr - The input from the user to test.
-   * @returns {boolean} - Returns true.
+   * @returns {boolean} - Returns true if array is valid.
    */
   validateArray (arr) {
     if (arr.length <= 0) {
