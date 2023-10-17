@@ -9,7 +9,7 @@ export class ErrorHandling {
    * @param {number} max - The maximum value of the range.
    * @returns {boolean} - Returns true if minimum is smaller than maximum.
    */
-  handleMinMax (min, max) {
+  validateMinMaxRange (min, max) {
     if (max < min) {
       throw new Error('Minimum must be the same or smaller than maximum.')
     }
@@ -22,7 +22,7 @@ export class ErrorHandling {
    * @param {Array} arr - The input from the user to test.
    * @returns {boolean} - Returns true.
    */
-  handleArray (arr) {
+  validateArray (arr) {
     if (arr.length <= 0) {
       throw new Error('Array can not be empty.')
     } else if (!Array.isArray(arr)) {
@@ -37,7 +37,7 @@ export class ErrorHandling {
    *
    * @param {number} length - the length the use inputs.
    */
-  handleLength (length) {
+  validateLength (length) {
     if (length <= 0) {
       throw new Error('length must be bigger than 0')
     }

@@ -2,6 +2,7 @@ import { ErrorHandling } from './errorHandling.js'
 
 /**
  * This class represents a Random Number Generator using a linear congruential method.
+ * About Linear congruential generator: https://en.wikipedia.org/wiki/Linear_congruential_generator.
  */
 export class LinearCongruentialGenerator {
   /**

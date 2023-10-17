@@ -3,6 +3,9 @@
 
 Detta är ett Javascript bibliotek som erbjuder funktioner för att slumpa fram olika typer av nummer och arrayer som använder sig av en linear congruential metod. Nedanför finns klasser och metoder som går att använda i detta bibliotek tillsammans med kodexempel.
 
+Det går att läsa om en Linear congruential generator här:
+[Linear congruential generator](https://en.wikipedia.org/wiki/Linear_congruential_generator)
+
 ## Installation
 
 ### Installera detta bibliotek med npm:
