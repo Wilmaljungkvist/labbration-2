@@ -20,7 +20,7 @@ describe('ArrayGenerator', () => {
     const min = 1
     const max = 10
     const length = 5
-    const arr = arrayGenerator.getRandomArray(min, max, length)
+    const arr = arrayGenerator.createRandomArray(min, max, length)
     expect(arr).toHaveLength(length)
     for (const num of arr) {
       expect(num).toBeGreaterThanOrEqual(min)
@@ -33,7 +33,7 @@ describe('ArrayGenerator', () => {
     const max = 1
     const length = 5
     expect(() => {
-      arrayGenerator.getRandomArray(min, max, length)
+      arrayGenerator.createRandomArray(min, max, length)
     }).toThrow('Minimum must be the same or smaller than maximum.')
   })
 
