@@ -1,4 +1,4 @@
-import { LinearCongruentialGenerator } from './LinearCongruentialGenerator.js'
+import { LinearCongruentialGenerator } from './linearCongruentialGenerator.js'
 import { ErrorHandling } from './errorHandling.js'
 export class PrimeGenerator {
 
