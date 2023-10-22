@@ -1,9 +1,6 @@
 import { LinearCongruentialGenerator } from './LinearCongruentialGenerator.js'
 import { ErrorHandling } from './errorHandling.js'
 
-/**
- * Class that has diffrent types of array generators.
- */
 export class ArrayGenerator {
  
   constructor () {
@@ -12,11 +9,8 @@ export class ArrayGenerator {
   }
 
   /**
-   * Generates an random array index based on the chosen array.
+   * Generates and returns an random array index based on the chosen array.
    * Throws error if array is empty.
-   *
-   * @param {Array} arr - The array that is getting a random index.
-   * @returns {number} - Returns the random array index.
    */
   getRandomArrayIndex (arr) {
     this.error.validateArray(arr)
@@ -27,14 +21,9 @@ export class ArrayGenerator {
 
   /**
    * Generates and array with random numbers depending on min, max values and the specified length. The array gets shuffles before it's returned.
-   * Throws error if max is less than min and lenght is 0 or less.
-   *
-   * @param {number} min - The minimum value of the numbers in the array.
-   * @param {number} max - The maximum value of the numbers in the array.
-   * @param {number} length - The length of the array.
-   * @returns {Array} - Returns the array with the numbers.
+   * Throws error if max is less than min and length is 0 or less.
    */
-  getRandomArray (min, max, length) {
+  createRandomArray (min, max, length) {
     this.error.validateMinMaxRange(min, max)
     this.error.validateLength(length)
     const arr = []
@@ -46,11 +35,8 @@ export class ArrayGenerator {
   }
 
   /**
-   * Method for shuffling an array.
+   * Shuffles array. 
    * Throws error if array is empty.
-   *
-   * @param {Array} arr - The array that is going to get shuffled.
-   * @returns {Array} - Returns the shuffled array.
    */
   getShuffledArray (arr) {
     const shuffledArray = [...arr]

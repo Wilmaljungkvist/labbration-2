@@ -1,13 +1,7 @@
 import { LinearCongruentialGenerator } from './LinearCongruentialGenerator.js'
 import { ErrorHandling } from './errorHandling.js'
-
-/**
- * Class for an random prime generator.
- */
 export class PrimeGenerator {
-  /**
-   * The constructor creates a new instance of the ErrorHandling and LinearCongruentialGenerator class.
-   */
+
   constructor () {
     this.numberGenerator = new LinearCongruentialGenerator()
     this.error = new ErrorHandling()
@@ -16,10 +10,6 @@ export class PrimeGenerator {
   /**
    * Generates an random prime number between the specified range.
    * Throws error if max is less than min.
-   *
-   * @param {number} min - The minimun number in the range.
-   * @param {number} max - The maximum number in the range.
-   * @returns {number} - Returns the generated prime number or undefined if an error occurs.
    */
   getRandomPrimeNumber (min, max) {
     let number
@@ -31,12 +21,7 @@ export class PrimeGenerator {
   }
 
   /**
-   * Creates an array with an specified amount of number between the specified range.
-   *
-   * @param {number} min - The minimum number in the range.
-   * @param {number} max - The maximum number in the range.
-   * @param {number} length - The length of the array.
-   * @returns {Array} - Returns the array.
+   * Creates an array with an specified amount of numbers between the specified range.
    */
   getRandomPrimeNumberSequence (min, max, length) {
     this.error.validateMinMaxRange(min, max)

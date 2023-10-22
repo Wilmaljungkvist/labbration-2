@@ -24,9 +24,6 @@ export class LinearCongruentialGenerator {
     }
   }
 
-  /**
-   * Generates valid parameters for the LCG.
-   */
   #generateValidParameters () {
     do {
       this.seed = Math.floor(Math.random() * 10000) + 1
@@ -36,11 +33,6 @@ export class LinearCongruentialGenerator {
     } while (!this.#isValidParameters())
   }
 
-  /**
-   * Checks if the current parameters are valid.
-   *
-   * @returns {boolean} - Returns true if the parameters are valid or false if not valid.
-   */
   #isValidParameters () {
     const modulus = this.modulus
     const multiplier = this.multiplier
@@ -62,13 +54,6 @@ export class LinearCongruentialGenerator {
     return true
   }
 
-  /**
-   * Looks for the common divisor in to numbers.
-   *
-   * @param {number} biggerNumber - The bigger number.
-   * @param {number} smallerNumber - The smaller number.
-   * @returns {number} - The common divisor between the two numbers.
-   */
   #biggestCommonDivisor (biggerNumber, smallerNumber) {
     while (smallerNumber !== 0) {
       const temporary = smallerNumber
@@ -79,10 +64,7 @@ export class LinearCongruentialGenerator {
   }
 
   /**
-   * Checks if the number is a prime number.
-   *
-   * @param {number} number - The number that is going to be checked if prime or not.
-   * @returns {boolean} - Returns true if the number is prime and false if not prime.
+   * Returns true if number is prime.
    */
   isPrime (number) {
     if (number <= 1) {
@@ -100,11 +82,7 @@ export class LinearCongruentialGenerator {
     return true
   }
 
-  /**
-   * The next decimal in the sequence, a number between 0 and 1.
-   *
-   * @returns {number} - Returns the generated number.
-   */
+
   #nextDecimalInSequence () {
     this.seed = (this.multiplier * this.seed + this.increment) % this.modulus
     return this.seed / this.modulus
@@ -113,10 +91,6 @@ export class LinearCongruentialGenerator {
   /**
    * Generates the next random decimal.
    * Throws error if max is less than min.
-   *
-   * @param {number} min - The minimum number in the range.
-   * @param {number} max - The maximum number in the range.
-   * @returns {number} - Returns the generated number.
    */
   getNextDecimalRange (min, max) {
     this.error.validateMinMaxRange(min, max)
@@ -128,10 +102,6 @@ export class LinearCongruentialGenerator {
   /**
    * Generates the next random integer.
    * Throws error if max is less than min.
-   *
-   * @param {number} min - The minimum number in the range.
-   * @param {number} max - The maximum number in the range.
-   * @returns {number} - Returns the generated number.
    */
   getNextIntRange (min, max) {
     this.error.validateMinMaxRange(min, max)
