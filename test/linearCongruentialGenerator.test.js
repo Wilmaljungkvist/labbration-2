@@ -10,7 +10,7 @@ describe('LinearCongruentialGenerator', () => {
   test('nextDecimalRange should return a decimal number within the specified range', () => {
     const min = 0
     const max = 1
-    const randomValue = lcg.nextDecimalRange(min, max)
+    const randomValue = lcg.getNextDecimalRange(min, max)
     expect(randomValue).toBeGreaterThanOrEqual(min)
     expect(randomValue).toBeLessThanOrEqual(max)
   })
@@ -18,7 +18,7 @@ describe('LinearCongruentialGenerator', () => {
   test('nextIntRange should return an integer within the specified range', () => {
     const min = 0
     const max = 10
-    const randomValue = lcg.nextIntRange(min, max)
+    const randomValue = lcg.getNextIntRange(min, max)
     expect(randomValue).toBeGreaterThanOrEqual(min)
     expect(randomValue).toBeLessThanOrEqual(max)
     expect(Number.isInteger(randomValue)).toBe(true)
@@ -28,7 +28,7 @@ describe('LinearCongruentialGenerator', () => {
     const min = 10
     const max = 1
     expect(() => {
-      lcg.nextIntRange(min, max)
+      lcg.getNextIntRange(min, max)
     }).toThrow('Minimum must be the same or smaller than maximum.')
   })
 
@@ -36,7 +36,7 @@ describe('LinearCongruentialGenerator', () => {
     const min = 10
     const max = 1
     expect(() => {
-      lcg.nextDecimalRange(min, max)
+      lcg.getNextDecimalRange(min, max)
     }).toThrow('Minimum must be the same or smaller than maximum.')
   })
 })

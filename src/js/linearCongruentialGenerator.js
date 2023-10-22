@@ -2,6 +2,7 @@ import { ErrorHandling } from './errorHandling.js'
 
 /**
  * This class represents a Random Number Generator using a linear congruential method.
+ * About Linear congruential generator: https://en.wikipedia.org/wiki/Linear_congruential_generator.
  */
 export class LinearCongruentialGenerator {
   /**
@@ -23,9 +24,6 @@ export class LinearCongruentialGenerator {
     }
   }
 
-  /**
-   * Generates valid parameters for the LCG.
-   */
   #generateValidParameters () {
     do {
       this.seed = Math.floor(Math.random() * 10000) + 1
@@ -35,17 +33,12 @@ export class LinearCongruentialGenerator {
     } while (!this.#isValidParameters())
   }
 
-  /**
-   * Checks if the current parameters are valid.
-   *
-   * @returns {boolean} - Returns true if the parameters are valid or false if not valid.
-   */
   #isValidParameters () {
     const modulus = this.modulus
     const multiplier = this.multiplier
     const increment = this.increment
 
-    if (!this.#isPrime(modulus)) {
+    if (!this.isPrime(modulus)) {
       return false
     }
 
@@ -58,17 +51,9 @@ export class LinearCongruentialGenerator {
         return false
       }
     }
-
     return true
   }
 
-  /**
-   * Looks for the common divisor in to numbers.
-   *
-   * @param {number} biggerNumber - The bigger number.
-   * @param {number} smallerNumber - The smaller number.
-   * @returns {number} - The common divisor between the two numbers.
-   */
   #biggestCommonDivisor (biggerNumber, smallerNumber) {
     while (smallerNumber !== 0) {
       const temporary = smallerNumber
@@ -79,12 +64,9 @@ export class LinearCongruentialGenerator {
   }
 
   /**
-   * Checks if the number is a prime number.
-   *
-   * @param {number} number - The number that is going to be checked if prime or not.
-   * @returns {boolean} - Returns true if the number is prime and false if not prime.
+   * Returns true if number is prime.
    */
-  #isPrime (number) {
+  isPrime (number) {
     if (number <= 1) {
       return false
     } else if (number <= 3) {
@@ -92,7 +74,6 @@ export class LinearCongruentialGenerator {
     } else if (number % 2 === 0 || number % 3 === 0) {
       return false
     }
-
     for (let i = 5; i * i <= number; i += 6) {
       if (number % i === 0 || number % (i + 2) === 0) {
         return false
@@ -101,11 +82,7 @@ export class LinearCongruentialGenerator {
     return true
   }
 
-  /**
-   * The next decimal in the sequence, a number between 0 and 1.
-   *
-   * @returns {number} - Returns the generated number.
-   */
+
   #nextDecimalInSequence () {
     this.seed = (this.multiplier * this.seed + this.increment) % this.modulus
     return this.seed / this.modulus
@@ -113,13 +90,10 @@ export class LinearCongruentialGenerator {
 
   /**
    * Generates the next random decimal.
-   *
-   * @param {number} min - The minimum number in the range.
-   * @param {number} max - The maximum number in the range.
-   * @returns {number} - Returns the generated number.
+   * Throws error if max is less than min.
    */
-  nextDecimalRange (min, max) {
-    this.error.handleMinMax(min, max)
+  getNextDecimalRange (min, max) {
+    this.error.validateMinMaxRange(min, max)
     const randomValue = this.#nextDecimalInSequence()
     const minMaxValue = min + randomValue * (max - min)
     return minMaxValue
@@ -127,13 +101,10 @@ export class LinearCongruentialGenerator {
 
   /**
    * Generates the next random integer.
-   *
-   * @param {number} min - The minimum number in the range.
-   * @param {number} max - The maximum number in the range.
-   * @returns {number} - Returns the generated number.
+   * Throws error if max is less than min.
    */
-  nextIntRange (min, max) {
-    this.error.handleMinMax(min, max)
+  getNextIntRange (min, max) {
+    this.error.validateMinMaxRange(min, max)
     const randomValue = this.#nextDecimalInSequence()
     const minMaxValue = min + randomValue * (max - min)
     return Math.floor(minMaxValue)

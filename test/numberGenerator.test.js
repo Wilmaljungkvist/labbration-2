@@ -1,17 +1,17 @@
-import { RandomNumberGenerator } from '../src/js/randomNumberGenerator'
+import { NumberGenerator } from '../src/js/numberGenerator'
 
-describe('RandomNumberGenerator', () => {
-  let randomNumberGenerator
+describe('NumberGenerator', () => {
+  let numberGenerator
 
   beforeEach(() => {
-    randomNumberGenerator = new RandomNumberGenerator()
+    numberGenerator = new NumberGenerator()
   })
 
   test('randomInt should return a random Integer within the range', () => {
     let min = 10
     let max = 20
     for (let i = 1; i < 6; i++) {
-      const randomNumber = randomNumberGenerator.randomInt(min, max)
+      const randomNumber = numberGenerator.getRandomInt(min, max)
       expect(randomNumber).toBeGreaterThanOrEqual(min)
       expect(randomNumber).toBeLessThanOrEqual(max)
       min += i
@@ -23,12 +23,12 @@ describe('RandomNumberGenerator', () => {
     const min = 10
     const max = 1
     expect(() => {
-      randomNumberGenerator.randomInt(min, max)
+      numberGenerator.getRandomInt(min, max)
     }).toThrow('Minimum must be the same or smaller than maximum.')
   })
 
   test('RabdomBoolean should return a random Boolean, true or false', () => {
-    const result = randomNumberGenerator.randomBoolean()
+    const result = numberGenerator.getRandomBoolean()
     expect(result).toEqual(expect.any(Boolean))
   })
 
@@ -36,7 +36,7 @@ describe('RandomNumberGenerator', () => {
     let min = 10
     let max = 20
     for (let i = 1; i < 6; i++) {
-      const randomNumber = randomNumberGenerator.randomDecimal(min, max)
+      const randomNumber = numberGenerator.getRandomDecimal(min, max)
       expect(randomNumber).toBeGreaterThanOrEqual(min)
       expect(randomNumber).toBeLessThanOrEqual(max)
       min += i
@@ -48,7 +48,7 @@ describe('RandomNumberGenerator', () => {
     const min = 10
     const max = 1
     expect(() => {
-      randomNumberGenerator.randomDecimal(min, max)
+      numberGenerator.getRandomDecimal(min, max)
     }).toThrow('Minimum must be the same or smaller than maximum.')
   })
 })

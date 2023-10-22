@@ -3,6 +3,9 @@
 
 Detta är ett Javascript bibliotek som erbjuder funktioner för att slumpa fram olika typer av nummer och arrayer som använder sig av en linear congruential metod. Nedanför finns klasser och metoder som går att använda i detta bibliotek tillsammans med kodexempel.
 
+Det går att läsa om en Linear congruential generator här:
+[Linear congruential generator](https://en.wikipedia.org/wiki/Linear_congruential_generator)
+
 ## Installation
 
 ### Installera detta bibliotek med npm:
@@ -22,12 +25,15 @@ import { RandomArrayGenerator, RandomNumberGenerator, RandomPrimeGenerator, Line
 Här är ett exempel på hur du kan använda RandomNumberGenerator för att generera slumpade tal:
 
 ```javascript
-import { RandomNumberGenerator } from 'slumpgenerator'
-const rng = new RandomNumberGenerator()
+import { NumberGenerator } from 'slumpgenerator'
+const rng = new NumberGenerator()
 
 // Generera ett slumpat heltal mellan 1 och 10
-const randomNumber = rng.randomInt(1, 10)
-console.log(`Slumpat heltal: ${randomNumber}`)
+const randomNumber = rng.getRandomInt(1, 10)
+console.log(randomNumber)
+```
+```bash
+1
 ```
 
 ## RandomArrayGenerator class
@@ -35,24 +41,32 @@ Klass med metoder som slumpar ett index i en array och genererar en array med sl
 
 ## Constructor
 ```Javascript
-const randomArrayGen = new RandomArrayGenerator()
+const randomArrayGen = new ArrayGenerator()
 ```
 
 ## randomArrayIndex(arr)
 Returnerar ett slumpat index i den inskickade arrayen. 
 
 ```Javascript
-const randomArrayGen = new RandomArrayGenerator()
+const randomArrayGen = new ArrayGenerator()
 const arr = [10, 20, 30, 40, 50]
-randomArrayGen.randomArrayIndex(arr) // Returnerar de slumpade index från arrayen.
+const index = randomArrayGen.getRandomArrayIndex(arr) // Returnerar de slumpade index från arrayen.
+console.log(index)
+```
+```bash
+1
 ```
 
 ## randomSequenceArray(min, max, length)
 En metod som genererar en array baserat på inskickade min, max och length värde. Där min är det minsta numret som kan finnas med, max det största numret och length är längden på arrayen. Metoden blandar dessutom arrayen.
 
 ```Javascript
-const randomArrayGen = new RandomArrayGenerator()
-randomArrayGen.randomSequenceArray(1, 100, 5) // Returnerar en array som innehåller 5 nummer mellan 1-100.
+const randomArrayGen = new ArrayGenerator()
+const arr = randomArrayGen.getRandomArray(1, 100, 5) // Returnerar en array som innehåller 5 nummer mellan 1-100.
+console.log(arr)
+```
+```bash
+[4, 78, 34, 75, 65]
 ```
 
 ## RandomNumberGenerator class
@@ -60,27 +74,39 @@ En klass med metoder som genererar slumpade decimaler, heltal och booleans.
 
 ### Constructor 
 ```Javascript
-const randomNumberGen = new RandomNumberGenerator()
+const randomNumberGen = new NumberGenerator()
 ```
 
 ## randomInt(min, max)
 Returnerar ett slumpat heltal inom de specifiserade intervallet.
 ```Javascript
-const randomNumberGen = new RandomNumberGenerator()
-randomNumberGen.randomInt(1, 10) // Returnerar ett slumpat heltal mellan 1-10.
+const randomNumberGen = new NumberGenerator()
+const int = randomNumberGen.getRandomInt(1, 10) // Returnerar ett slumpat heltal mellan 1-10.
+console.log(int)
+```
+```bash
+2
 ```
 
 ### randomDecimal(min, max)
 Returnerar ett slumpat decimaltal inom de specifiserade intervallet.
 ```Javascript
-const randomNumberGen = new RandomNumberGenerator()
-randomNumberGen.randomDecimal(0, 1) // Returnerar ett slumpat decimaltal mellan 0-1.
+const randomNumberGen = new NumberGenerator()
+const decimal = randomNumberGen.getRandomDecimal(0, 1) // Returnerar ett slumpat decimaltal mellan 0-1.
+console.log(decimal)
+```
+```bash
+0.736848738
 ```
 
 ### randomBoolean()
 ```Javascript
-const randomNumberGen = new RandomNumberGenerator()
-randomNumberGen.randomBoolean() // Slumpar och returnerar true eller false.
+const randomNumberGen = new NumberGenerator()
+const bool = randomNumberGen.getRandomBoolean() // Slumpar och returnerar true eller false.
+console.log(bool)
+```
+```bash
+true
 ```
 
 ## RandomPrimeGenerator class
@@ -88,46 +114,33 @@ En klass som används för att få fram slumpade primtal och kan generera arraye
 
 ### constructor
 ```Javascript
-const randomPrimeGen = new RandomPrimeGenerator()
+const randomPrimeGen = new PrimeGenerator()
 ```
 
 ### randomPrimeNumber(min, max)
 Retunerar ett slumpat primtal inom de specifiserade intervallet.
 
 ```Javascript
-const randomPrimeGen = new RandomPrimeGenerator()
-randomPrimeGen.randomPrimeNumber(1, 100) // Returnerar ett slumpat primtal mellan 1-100
+const randomPrimeGen = new PrimeGenerator()
+const prime = randomPrimeGen.getRandomPrimeNumber(1, 100) // Returnerar ett slumpat primtal mellan 1-100
+console.log(prime)
+```
+```bash
+3
 ```
 
 ### randomPrimeNumberSequence(min, max, length)
 Returnerar en array med slumpade primtal baserat på den specifiserade längden och intervallet.
 
 ```Javascript
-const randomPrimeGen = new RandomPrimeGenerator()
-randomPrimeGen.randomPrimeNumberSequence(1, 100, 5) // Returnerar en array med 5 primtal och primtalen är mellan 1-100.
+const randomPrimeGen = new PrimeGenerator()
+const arrPrime = randomPrimeGen.getRandomPrimeNumberSequence(1, 100, 5) // Returnerar en array med 5 primtal och primtalen är mellan 1-100.
+console.log(arrPrime)
 ```
 
-### Till utvecklare som vill bidra till koden.
-
-#### Issues
-https://github.com/Wilmaljungkvist/slumpgenerator/issues
-
-1. 
-Klona projektet, detta kommando klonar projektet.
 ```bash
-git clone https://github.com/Wilmaljungkvist/slumpgenerator.git 
+[97, 7, 53, 31, 83]
 ```
-2. 
-Skapa en separat gren.
-```bash
-git checkout -b din-gren-namn
-```
-
-3. 
-Pusha sedan dina ändringar till den nya grenen.
-
-4. 
-Gör sedan en pull request från din egen gren till main grenen. 
 
 För frågor går det bra att maila:
 wl222ek@student.lnu.se
